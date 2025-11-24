@@ -1,668 +1,789 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Roshan G. Ragel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-content">
-            <a href="index.html" class="logo">Roshan G. Ragel</a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="about.html">About</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="speaking.html">Speaking</a></li>
-                <li><a href="resources.html">Resources</a></li>
-            </ul>
-        </div>
-    </nav>
+:root {
+    --primary-bg: #1a1612;
+    --secondary-bg: #2d2620;
+    --accent-gold: #d4af37;
+    --accent-copper: #b87333;
+    --text-primary: #f5f5f0;
+    --text-secondary: #c4b5a0;
+    --overlay: rgba(26, 22, 18, 0.85);
+}
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <h1>About</h1>
-        <p>Academic Excellence and Innovation</p>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Main Content -->
-    <main>
-        <div class="about-content fade-in">
-            <div class="about-text">
-                <p>
-                    Dr. Ragel was appointed a Senior Lecturer in Computer Engineering at the University of Peradeniya in December 2007 and has been a Professor since October 2017. 
-                    He has been a Professional Member of the IEEE and IEEE Computer Society since 2005 and a Senior Member since 2014. He was a visiting research scholar at the UNSW – Sydney many times, 
-                    QUT – Brisbane, UIUC – Illinois, and ANU – Canberra once each.
-                </p>
-                <p>
-                    Prof Ragel has co-authored over 200 peer-reviewed articles on Internet of Things, Wearable Computing, Bioinformatics, and Artificial Intelligence and Machine Learning. He has won several best paper awards in 
-                    conference papers, the most prolific Sri Lankan author award from Elsevier Research in 2017, and the Presidential award for scientific publication in Sri Lanka in 2018 and 2023. He was also named the top scientist
-                    in computer science in Sri Lanka by the AD Scientific Index in 2021 
-                    and 2022 and the best computer scientist in the country from 2023 to 2025. He also won the National Educator Gold Awards 2024 for Computing, given to the best in each field of the Higher Education sector.
-                </p>
-                <p>
-                    Prof Ragel received the 2025 IEEE Computer Society Mary Kenneth Keller Computer Science & Engineering Undergraduate Teaching Award, the first academic to receive this award from the Global South. 
-                    This prestigious honor recognizes his outstanding contributions to undergraduate education through innovative teaching, 
-                    impactful research, and dedicated service, fostering an inclusive community of experiential mentorship for undergraduates in Sri Lanka.
-                </p>
-                <p>
-                    Prof Ragel has been the consulting chief executive officer at the Lanka Research and Education Network (LEARN), the national NREN, since 2017. With his involvement, LEARN was able to step up for a 
-                    significant milestone by launching the Asi@Connect Project in Sri Lanka in 2017, which brought many opportunities for the LEARN Research and Education (R&E) network community to get involved in utilising the project 
-                    resources and funds. He has represented Sri Lanka in the Asi@Connect Governors meeting and has been a Council Member of Asia Pacific Advanced Network (APAN) since 2017. Since 2020, he is also the Vice-Chair of the Asi@Connect Steering Committee. 
-                    With COVID-19 lockdowns, LEARN is helping the university community in the country connect and engage in productive research and education activities online.
-                </p>
-                <p>
-                    At the National level, Prof Ragel was a Core Group member for Higher Education at the Presidential Task Force for Education, which was established in 2020. He is a member of the UGC Standing Committee
-                    on the Development of IT Infrastructure and Online Education and the UGC-appointed committee to develop the Concept of Virtual / Hybrid University. He also served as a member of the Presidential Committee to 
-                    Formulate the AI Strategy for Sri Lanka, a committee formulated with the advancement of Generative AI. He also worked with ICTA Sri Lanka to steer the AI Sri Lanka initiative, leading the Skills and Curricula pillar. 
-                    He is also a founder of the AI Forum for Academics (AIFA). 
-                    This academic syndicate explores the opportunities and challenges of GenAI in Higher education based at the University of Peradeniya.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="roshan-ragel-photo.jpeg" alt="Prof. Roshan G. Ragel" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        <div class="content-section fade-in fade-in-delay-1">
-            <h2>Educational Qualifications</h2>
-            <div class="list-item">
-                <h3>PhD in Computer Science and Engineering</h3>
-                <p class="date">University of New South Wales (UNSW)</p>
-                <p>Doctoral research in computer science and engineering.</p>
-            </div>
-            <div class="list-item">
-                <h3>BSc Engineering (Hons)</h3>
-                <p class="date">University of Peradeniya</p>
-                <p>Bachelor of Science in Engineering with Honours.</p>
-            </div>
-        </div>
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 22, 18, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
 
-        <div class="content-section fade-in fade-in-delay-2">
-            <h2>Research Interests</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Embedded Systems</h3>
-                    <p>Advanced research in embedded systems design, development, and optimization for various applications.</p>
-                </div>
-                <div class="card">
-                    <h3>Internet of Things (IoT)</h3>
-                    <p>IoT systems architecture, connected devices, and smart technology solutions.</p>
-                </div>
-                <div class="card">
-                    <h3>Accelerated Computing</h3>
-                    <p>Hardware and software acceleration techniques for high-performance computing applications.</p>
-                </div>
-                <div class="card">
-                    <h3>Reliability and Security</h3>
-                    <p>System reliability, security mechanisms, and protection against vulnerabilities in computing systems.</p>
-                </div>
-                <div class="card">
-                    <h3>Computational Biology</h3>
-                    <p>Applying computational methods to biological research and bioinformatics challenges.</p>
-                </div>
-                <div class="card">
-                    <h3>Micro-architectural Aspects of Embedded Systems Design & Security</h3>
-                    <p>Low-level design considerations and security implications in embedded system architectures.</p>
-                </div>
-                <div class="card">
-                    <h3>Side-Channel Attacks and Countermeasures</h3>
-                    <p>Research on side-channel vulnerabilities and developing effective countermeasures for secure systems.</p>
-                </div>
-                <div class="card">
-                    <h3>Application-Specific Processor Design</h3>
-                    <p>Custom processor architectures designed for specific computational tasks and applications.</p>
-                </div>
-                <div class="card">
-                    <h3>Hardware/Software Acceleration of Bio-informatics Algorithms</h3>
-                    <p>Accelerating bioinformatics computations through specialized hardware and optimized software implementations.</p>
-                </div>
-            </div>
-        </div>
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        <div class="content-section fade-in fade-in-delay-3">
-            <h2>Awards and Honours</h2>
-            <div class="list-item">
-                <h3>2025 IEEE Computer Society Mary Kenneth Keller Computer Science & Engineering Undergraduate Teaching Award</h3>
-                <p class="date">2025</p>
-                <p>First academic from the Global South to receive this prestigious international award.</p>
-            </div>
-            <div class="list-item">
-                <h3>The National Educator Gold Awards 2024 for Computing</h3>
-                <p class="date">2024</p>
-                <p>Recognized as the best educator in Computing in the Higher Education sector.</p>
-            </div>
-            <div class="list-item">
-                <h3>Best Scientist in CS in the Country</h3>
-                <p class="date">2023-2025 · AD Scientific Index</p>
-                <p>Named best computer scientist in Sri Lanka from 2023 to 2025.</p>
-            </div>
-            <div class="list-item">
-                <h3>Top Scientist in Computer Science in Sri Lanka</h3>
-                <p class="date">2021 & 2022 · AD Scientific Index</p>
-                <p>Recognized as top scientist in computer science in Sri Lanka for two consecutive years.</p>
-            </div>
-            <div class="list-item">
-                <h3>Tier 4* Awardee for Research Excellence</h3>
-                <p class="date">2020 · University of Peradeniya</p>
-                <p>Under the Transparent Research Performance Scheme introduced by the University Grants Commission (UGC) Sri Lanka.</p>
-            </div>
-            <div class="list-item">
-                <h3>Faculty Research Excellence Award</h3>
-                <p class="date">2018 · Faculty of Engineering, University of Peradeniya</p>
-                <p>Recognized for outstanding research contributions within the faculty.</p>
-            </div>
-            <div class="list-item">
-                <h3>Presidential Awards for Scientific Publications</h3>
-                <p class="date">2018 & 2023</p>
-                <p>Awarded twice for exceptional contributions to scientific research and publication in Sri Lanka.</p>
-            </div>
-            <div class="list-item">
-                <h3>The Scopus Most Prolific Sri Lankan Author</h3>
-                <p class="date">2011-2016 · May 2017</p>
-                <p>Recognized by MOSTR, COSTi and Elsevier Research as the most prolific Sri Lankan author.</p>
-            </div>
-            <div class="list-item">
-                <h3>Best Paper Award - ICIAfS 2014</h3>
-                <p class="date">The 7th International Conference on Information and Automation for Sustainability · Colombo, Sri Lanka</p>
-                <p>Awarded for outstanding research paper presentation.</p>
-            </div>
-            <div class="list-item">
-                <h3>e-Swabhinami 2012 Award</h3>
-                <p class="date">e-Science & Technology Category · 2012</p>
-                <p>For the project titled "Open-source Framework for Lead Identification in Drug Design".</p>
-            </div>
-            <div class="list-item">
-                <h3>Best Paper Award - ICIAfS 2012</h3>
-                <p class="date">The 6th International Conference on Information and Automation for Sustainability · Beijing, China</p>
-                <p>Recognized for excellent research contribution.</p>
-            </div>
-            <div class="list-item">
-                <h3>Won the First Franklin Pierce Center for Intellectual Property Essay Competition in Sri Lanka</h3>
-                <p class="date">2012</p>
-                <p>Organized by School of Law at University of New Hampshire.</p>
-            </div>
-            <div class="list-item">
-                <h3>Best Student Paper Award for ICT & Social Transformation Track</h3>
-                <p class="date">The 5th International Conference on Information and Automation for Sustainability (ICIAfS2010)</p>
-                <p>Awarded for outstanding student paper presentation.</p>
-            </div>
-        </div>
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
-        <div class="content-section fade-in fade-in-delay-3">
-            <h2>Grants</h2>
-            <div class="list-item">
-                <h3>National Research and Education Network Needs Assessment</h3>
-                <p class="date">€36,300 · Asi@Connect project from EU · 2021</p>
-                <p>Funding for assessing and developing national research and education network infrastructure.</p>
-            </div>
-            <div class="list-item">
-                <h3>Technology Enabled Active Learning Environment (TEAL 2.0)</h3>
-                <p class="date">€999,091 · Erasmus+ from EU · 2020-2022</p>
-                <p>Improving Access to Science and Technology Higher Education in Resource-Poor Institutions through an Open Platform for Technology Enabled Active Learning Environment (TEAL 2.0). The project will be carried out by a consortium of the following eleven universities and the European Center for Quality: UNIVERSITY OF PERADENIYA – Sri Lanka, UNIVERSITY OF MORATUWA – Sri Lanka, SLT CAMPUS (PVT) LTD – Sri Lanka, INDIAN INSTITUTE OF INFORMATION TECHNOLOGY ALLAHABAD – India, RK UNIVERSITY – India, VELLORE INSTITUTE OF TECHNOLOGY TRUST-VIT UNIVERSITY – India, ASIAN INSTITUTE OF TECHNOLOGY – Thailand, NARESUAN UNIVERSITY – Thailand, UNIVERSITATEA TRANSILVANIA DIN BRASOV – Rumania, ALMA MATER STUDIORUM – UNIVERSITA DI BOLOGNA – Italy, UNIVERSITETET I STAVANGER – Norway, and EUROPEAN CENTER FOR QUALITY OOD – Bulgaria.</p>
-            </div>
-            <div class="list-item">
-                <h3>IPv6, DNS/DNSSEC, and Network Security Enhancement</h3>
-                <p class="date">€150,000 · Asi@Connect project from EU · 2019-2021</p>
-                <p>Uplifting Resources to Deploy IPv6, DNS/DNSSEC, identity access management and monitoring of the network performance and its security. The activities are (1) Host Workshops in Bhutan, Laos and Sri Lanka to train NREN technical people on IPv6, DNS/DNSSEC and monitoring of the network performance and security, and (2) Collaborative effort by LEARN, Royal University Bhutan, LERNET-Laos and APNIC. Prospective target countries: Laos, Bhutan, Nepal, Cambodia, Afghanistan, Myanmar, Sri Lanka, Philippines and Vietnam.</p>
-            </div>
-        </div>
+.logo:hover {
+    opacity: 0.8;
+}
 
-        <div class="content-section fade-in fade-in-delay-3">
-            <h2>Leadership Positions</h2>
-            <div class="list-item">
-                <h3>Professor of Computer Engineering</h3>
-                <p class="date">University of Peradeniya · October 2017 - Present</p>
-                <p>Leading research initiatives and teaching advanced courses. Previously Senior Lecturer (December 2007 - October 2017).</p>
-            </div>
-            <div class="list-item">
-                <h3>Consulting Chief Executive Officer</h3>
-                <p class="date">Lanka Research and Education Network (LEARN) · 2017 - Present</p>
-                <p>Leading the national NREN, launched Asi@Connect Project in Sri Lanka (2017), represented Sri Lanka in Asi@Connect Governors meetings.</p>
-            </div>
-            <div class="list-item">
-                <h3>Vice-Chair, Asi@Connect Steering Committee</h3>
-                <p class="date">2020 - Present</p>
-                <p>Council Member of Asia Pacific Advanced Network (APAN) since 2017, providing strategic direction for regional research and education networks.</p>
-            </div>
-            <div class="list-item">
-                <h3>Presidential Task Force for Education</h3>
-                <p class="date">Core Group Member · 2020</p>
-                <p>Member of UGC Standing Committee on IT Infrastructure and Online Education, and committee for Virtual/Hybrid University development.</p>
-            </div>
-            <div class="list-item">
-                <h3>AI Strategy Development</h3>
-                <p class="date">Multiple National Committees</p>
-                <p>Member of Presidential Committee to Formulate AI Strategy for Sri Lanka, worked with ICTA Sri Lanka on AI initiative, leads Skills and Curricula pillar.</p>
-            </div>
-            <div class="list-item">
-                <h3>Founder, AI Forum for Academics (AIFA)</h3>
-                <p class="date">University of Peradeniya</p>
-                <p>Academic syndicate exploring opportunities and challenges of GenAI in Higher Education.</p>
-            </div>
-        </div>
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
 
-        <div class="content-section fade-in fade-in-delay-3">
-            <h2>Publications</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
-                Prof. Ragel has co-authored over 200 peer-reviewed articles spanning multiple years of research in Computer Engineering, 
-                IoT, Bioinformatics, and related fields. Below are publications organized by year.
-            </p>
-            
-            <div class="publications-note" style="padding: 2rem; background: var(--secondary-bg); border-left: 4px solid var(--accent-gold); border-radius: 8px; margin-bottom: 3rem;">
-                <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
-                    <strong style="color: var(--text-primary);">Note:</strong> This page contains publications affiliated with the Department of Computer Engineering. 
-                    To see the full publication profile, please visit:
-                </p>
-                <div style="margin-top: 1rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <span>📚</span> Google Scholar
-                    </a>
-                    <a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <span>🔬</span> ResearchGate
-                    </a>
-                    <a href="https://orcid.org/YOUR_ORCID" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <span>🆔</span> ORCID
-                    </a>
-                    <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/#research" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <span>🏛️</span> University Profile
-                    </a>
-                </div>
-            </div>
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
-            <div class="publications-years">
-                <details class="year-section">
-                    <summary class="year-header">2025</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2025 publications as needed -->
-                    </div>
-                </details>
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2023</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2023 publications as needed -->
-                    </div>
-                </details>
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-gold);
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2021</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2021 publications as needed -->
-                    </div>
-                </details>
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2020</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2020 publications as needed -->
-                    </div>
-                </details>
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1612 0%, #2d2620 100%);
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2019</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2019 publications as needed -->
-                    </div>
-                </details>
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(184, 115, 51, 0.06) 0%, transparent 50%);
+    animation: gradient-shift 15s ease-in-out infinite;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2018</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2018 publications as needed -->
-                    </div>
-                </details>
+@keyframes gradient-shift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2017</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2017 publications as needed -->
-                    </div>
-                </details>
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    max-width: 1200px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2016</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2016 publications as needed -->
-                    </div>
-                </details>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2015</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2015 publications as needed -->
-                    </div>
-                </details>
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2014</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2014 publications as needed -->
-                    </div>
-                </details>
+.hero h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2013</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2013 publications as needed -->
-                    </div>
-                </details>
+.hero-social {
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2012</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2012 publications as needed -->
-                    </div>
-                </details>
+.hero-social a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2011</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2011 publications as needed -->
-                    </div>
-                </details>
+.hero-social a:hover {
+    color: var(--accent-gold);
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2010</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2010 publications as needed -->
-                    </div>
-                </details>
+/* Page Header (for non-home pages) */
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1612 0%, #2d2620 100%);
+    position: relative;
+    overflow: hidden;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2009</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2009 publications as needed -->
-                    </div>
-                </details>
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2008</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2008 publications as needed -->
-                    </div>
-                </details>
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 1;
+}
 
-                <details class="year-section">
-                    <summary class="year-header">2006</summary>
-                    <div class="year-content">
-                        <div class="publication-item">
-                            <p class="pub-title">Publication titles will be added here</p>
-                            <p class="pub-authors">Authors, Conference/Journal Name, Year</p>
-                        </div>
-                        <!-- Add more 2006 publications as needed -->
-                    </div>
-                </details>
-            </div>
-        </div>
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
 
-        <div class="content-section fade-in fade-in-delay-3">
-            <h2>Postgraduate Students</h2>
-            
-            <h3 style="color: var(--accent-gold); margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.5rem;">PhD Candidates</h3>
-            
-            <div class="students-grid">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/mathuranthagaa-selvaratnam.jpg" alt="Mathuranthagaa Selvaratnam" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Mathuranthagaa Selvaratnam</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-supervision">Co-supervised with Muttukrishnan Rajarajan, City, University of London</p>
-                    </div>
-                </div>
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/romiyal-george.jpg" alt="Romiyal George" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Romiyal George</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-topic">Plant Diseases Detection</p>
-                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia</p>
-                    </div>
-                </div>
+/* Content Sections */
+.content-section {
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease-out;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/m-santhanakrishnan.jpg" alt="M Santhanakrishnan" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>M Santhanakrishnan</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia and Siyamalan Manivannan, University of Jaffna</p>
-                    </div>
-                </div>
+.content-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/kanagasabai-thiruthanigesan.jpg" alt="Kanagasabai Thiruthanigesan" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Kanagasabai Thiruthanigesan</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-supervision">Co-supervised with Ruwan Nawarathna, CS, UoP</p>
-                    </div>
-                </div>
+.content-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/roshan-pushpakumara.jpg" alt="Roshan Pushpakumara" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Roshan Pushpakumara</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
-                    </div>
-                </div>
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/s-nimishan.jpg" alt="S Nimishan" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>S Nimishan</h4>
-                        <p class="student-degree">PhD Candidate</p>
-                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia and S. Vasanthapriyan (SUSL)</p>
-                    </div>
-                </div>
-            </div>
+/* About Page Specific */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
 
-            <h3 style="color: var(--accent-gold); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem;">Masters Candidates</h3>
-            
-            <div class="students-grid">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/anjana-senanayake.jpg" alt="Anjana Senanayake" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Anjana Senanayake</h4>
-                        <p class="student-degree">MPhil</p>
-                        <p class="student-supervision">Co-supervised with Hasindu Gamaarachchi (UNSW, Sydney) and Damayanthi Herath (UoP)</p>
-                    </div>
-                </div>
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/rukshani-puvanendran.jpg" alt="Rukshani Puvanendran" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Rukshani Puvanendran</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Asanka P. Sayakkara (UCSC)</p>
-                    </div>
-                </div>
+.about-image {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 120px;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/rasendram-muralitharan.jpg" alt="Rasendram Muralitharan" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Rasendram Muralitharan</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Upul Jayasinghe (UoP)</p>
-                    </div>
-                </div>
+.about-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--accent-gold);
+    border-radius: 8px;
+    opacity: 0.5;
+    z-index: 1;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/sandaruwan-herath.jpg" alt="Sandaruwan Herath" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Sandaruwan Herath</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Prabhath Gunathilake</p>
-                    </div>
-                </div>
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/warunika-hippola.jpg" alt="Warunika Hippola" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Warunika Hippola</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
-                    </div>
-                </div>
+/* New About Layout with Flowing Text */
+.about-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/hasini-vindiya-athauda.jpg" alt="Hasini Vindiya Athauda" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Hasini Vindiya Athauda</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Upul Jayasinghe</p>
-                    </div>
-                </div>
+.about-bio-section {
+    position: relative;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/h-hashan.jpg" alt="H Hashan" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>H Hashan</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Asitha Bandaranayake (UoP)</p>
-                    </div>
-                </div>
+.about-image-float {
+    float: right;
+    width: 400px;
+    margin: 0 0 2rem 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/dinusha-premasiri.jpg" alt="Dinusha Premasiri" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Dinusha Premasiri</h4>
-                        <p class="student-degree">MPhil Candidate</p>
-                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
-                    </div>
-                </div>
+.about-image-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--accent-gold);
+    border-radius: 8px;
+    opacity: 0.5;
+    z-index: 1;
+}
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="students/charunika-dampalessa.jpg" alt="Charunika Dampalessa" onerror="this.src='students/placeholder.jpg'">
-                    </div>
-                    <div class="student-info">
-                        <h4>Charunika Dampalessa</h4>
-                        <p class="student-degree">MSc by Research Candidate</p>
-                    </div>
-                </div>
-            </div>
+.about-image-float img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-            <div class="supervision-note" style="margin-top: 3rem; padding: 2rem; background: var(--secondary-bg); border-left: 4px solid var(--accent-gold); border-radius: 8px;">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Available for Supervision</h3>
-                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">
-                    Yes (limited availability)
-                </p>
-                <p style="color: var(--text-secondary); line-height: 1.8;">
-                    Prof. Ragel is accepting new postgraduate students for PhD and Masters programs with limited availability. 
-                    Research areas include Internet of Things, Artificial Intelligence & Machine Learning, 
-                    Bioinformatics, Computer Architecture, Wearable Computing, and Engineering Education. 
-                    For supervision inquiries, please contact via email at roshanr@pdn.ac.lk
-                </p>
-            </div>
-        </div>
-    </main>
+.about-text-flow {
+    text-align: justify;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Roshan G. Ragel. All rights reserved.</p>
-    </footer>
+.about-text-flow p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* Grid Layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Student Cards */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.student-card {
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.student-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(184, 115, 51, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.student-info {
+    padding: 1.5rem;
+}
+
+.student-info h4 {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.student-degree {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.student-topic {
+    color: var(--accent-copper);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.student-supervision {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Publications Section */
+.publications-years {
+    margin-top: 2rem;
+}
+
+.year-section {
+    margin-bottom: 1.5rem;
+    background: var(--secondary-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.year-section:hover {
+    border-color: var(--accent-gold);
+}
+
+.year-header {
+    padding: 1.5rem 2rem;
+    background: var(--secondary-bg);
+    color: var(--accent-gold);
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.year-header::-webkit-details-marker {
+    display: none;
+}
+
+.year-header::after {
+    content: '▼';
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] .year-header::after {
+    transform: rotate(180deg);
+}
+
+.year-header:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.year-content {
+    padding: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.publication-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.pub-title {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.pub-authors {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Cards */
+.card {
+    background: var(--secondary-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-copper));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.card .meta {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+/* List Items */
+.list-item {
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-gold);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.list-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.list-item h3 {
+    color: var(--accent-gold);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-item .date {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.list-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Video Cards */
+.video-card {
+    position: relative;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--secondary-bg);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 22, 18, 0.9), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.video-overlay h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+/* Speaking Cards */
+.speaking-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.speaking-card .icon {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+
+.speaking-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.speaking-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Resource Links */
+.resource-link {
+    display: inline-block;
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.resource-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.resource-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-bg);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: auto;
+}
+
+footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-bg);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image-float {
+        float: none;
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    main {
+        padding: 2rem 1.5rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in-delay-3 {
+    animation-delay: 0.6s;
+}
