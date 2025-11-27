@@ -8,6 +8,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .header-image {
+            flex: 0 0 400px;
+            max-width: 400px;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .header-image {
+                flex: 0 0 auto;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -28,8 +67,15 @@
 
     <!-- Page Header -->
     <header class="page-header">
-        <h1>Podcasts</h1>
-        <p>Conversations on Technology and Education</p>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Podcasts</h1>
+                <p>Conversations on Technology and Education</p>
+            </div>
+            <div class="header-image">
+                <img src="podcast.png" alt="Roshan G. Ragel speaking at a podcast recording">
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
