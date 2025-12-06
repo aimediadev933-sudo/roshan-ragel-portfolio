@@ -8,6 +8,145 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Speaking Page - Teal/Cyan Theme */
+        body {
+            background: linear-gradient(135deg, #0d3d3d 0%, #1a5555 100%);
+            --primary-bg: #0d3d3d;
+            --secondary-bg: #ffffff;
+            --accent-gold: #26c6da;
+            --accent-copper: #4dd0e1;
+            --text-primary: #333333;
+            --text-secondary: #555555;
+        }
+
+        nav {
+            background: rgba(13, 61, 61, 0.95);
+        }
+
+        nav .logo {
+            color: #4dd0e1;
+        }
+
+        nav .nav-links a {
+            color: #b0e0e6;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            color: #4dd0e1;
+        }
+
+        nav .nav-links a::after {
+            background: #4dd0e1;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #0d3d3d 0%, #1a5555 100%);
+        }
+
+        .page-header h1 {
+            background: linear-gradient(135deg, #4dd0e1 0%, #26c6da 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: #b0e0e6;
+        }
+
+        .content-section h2 {
+            color: #26c6da;
+        }
+
+        .content-section h3 {
+            color: #26c6da;
+        }
+
+        .content-section p {
+            color: #333333;
+        }
+
+        .card,
+        .list-item {
+            background: #ffffff;
+            border-color: rgba(77, 208, 225, 0.3);
+        }
+
+        .card::before {
+            background: linear-gradient(90deg, #26c6da, #4dd0e1);
+        }
+
+        .card:hover,
+        .list-item:hover {
+            border-color: #26c6da;
+            box-shadow: 0 10px 30px rgba(77, 208, 225, 0.15);
+        }
+
+        .card h3,
+        .list-item h3 {
+            color: #26c6da;
+        }
+
+        .card p,
+        .list-item p {
+            color: #333333;
+        }
+
+        .date {
+            color: #666666;
+        }
+
+        .list-item {
+            border-left-color: #26c6da;
+        }
+
+        .resource-link {
+            color: #26c6da;
+        }
+
+        .resource-link:hover {
+            color: #4dd0e1;
+        }
+
+        .resource-link::after {
+            background: #26c6da;
+        }
+
+        footer {
+            background: rgba(13, 61, 61, 0.95);
+            border-top-color: rgba(77, 208, 225, 0.3);
+        }
+
+        footer p {
+            color: #b0e0e6;
+        }
+
+        .speaking-card .icon {
+            color: #26c6da;
+        }
+
+        .speaking-card h3 {
+            color: #26c6da;
+        }
+
+        .speaking-card p {
+            color: #333333;
+        }
+
+        /* Mobile menu for teal theme */
+        .mobile-menu-btn {
+            color: #4dd0e1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                background: rgba(13, 61, 61, 0.98);
+                border-top-color: rgba(77, 208, 225, 0.3);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
