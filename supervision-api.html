@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervision | Roshan G. Ragel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Project Batch Sections */
+        .batch-section {
+            margin-bottom: 2rem;
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .batch-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.5rem;
+            background: rgba(100, 149, 237, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .batch-header:hover {
+            background: rgba(100, 149, 237, 0.15);
+        }
+
+        .batch-title {
+            color: #6495ED;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .batch-toggle {
+            color: #6495ED;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .batch-section.open .batch-toggle {
+            transform: rotate(180deg);
+        }
+
+        .batch-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .batch-section.open .batch-content {
+            max-height: 15000px;
+        }
+
+        /* Project Cards */
+        .projects-container {
+            padding: 1.5rem;
+        }
+
+        .project-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: var(--primary-bg);
+            border: 1px solid rgba(100, 149, 237, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: rgba(100, 149, 237, 0.4);
+            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.1);
+        }
+
+        .project-thumbnail {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b5998 0%, #6495ED 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .project-thumbnail i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .project-view-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid #6495ED;
+            color: #6495ED;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .project-view-btn:hover {
+            background: #6495ED;
+            color: white;
+        }
+
+        /* Loading State */
+        .loading-spinner {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner i {
+            font-size: 3rem;
+            color: #6495ED;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Update Info */
+        .update-info {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+        }
+
+        .update-info i {
+            color: #6495ED;
+            margin-right: 0.3rem;
+        }
+
+        .note-section {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .note-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .note-section a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-thumbnail {
+                width: 60px;
+                height: 60px;
+            }
+
+            .project-view-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Roshan G. Ragel</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="publications.html">PUBLICATIONS</a></li>
+                <li><a href="supervision.html">SUPERVISION</a></li>
+                <li><a href="podcasts.html">PODCASTS</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="speaking.html">SPEAKING</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Supervision</h1>
+        <p>Research Projects Supervised</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <div class="content-section fade-in">
+            <h2>Research projects supervised by:</h2>
+            <p style="color: var(--text-primary); line-height: 1.8; font-size: 1.1rem; margin-bottom: 2rem;">
+                Prof. Roshan G. Ragel supervises Final Year Research Projects (4YP) at the Department of Computer Engineering, 
+                University of Peradeniya. These projects span various domains including IoT, AI/ML, Bioinformatics, Computer Vision, 
+                Swarm Robotics, and more.
+            </p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="content-section">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-spinner">
+                <i class="fas fa-spinner"></i>
+                <p style="margin-top: 1rem;">Loading projects data...</p>
+            </div>
+
+            <!-- Projects Container -->
+            <div id="projectsContainer" style="display: none;"></div>
+
+            <!-- Update Info -->
+            <div id="updateInfo" class="update-info" style="display: none;"></div>
+
+            <!-- Note Section -->
+            <div class="note-section">
+                <p>
+                    <i class="fas fa-info-circle" style="color: var(--accent-gold);"></i>
+                    Please note that here only contain the "Projects" which were submitted to 
+                    <a href="https://projects.ce.pdn.ac.lk/" target="_blank">projects.ce.pdn.ac.lk</a> as Final Year Research Projects. 
+                    The actual list of projects supervised by Prof. Ragel may be longer than this.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Roshan G. Ragel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ========================================
+        // REAL API - Fetches from GitHub JSON file
+        // JSON is auto-updated daily by GitHub Actions
+        // ========================================
+
+        let projectsData = {};
+        let lastUpdated = '';
+
+        // Fetch projects data from JSON file
+        async function fetchProjectsData() {
+            try {
+                console.log('🚀 Fetching projects data from JSON...');
+                
+                // Fetch the JSON file (generated by GitHub Actions)
+                const response = await fetch('projects-data.json?v=' + Date.now()); // Cache bust
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('✅ Successfully loaded projects data');
+                console.log('📊 Data:', data);
+                
+                projectsData = data.projects;
+                lastUpdated = data.last_updated;
+                
+                displayProjects();
+                displayUpdateInfo(data);
+                hideLoading();
+                
+            } catch (error) {
+                console.error('❌ Error loading projects:', error);
+                showError();
+            }
+        }
+
+        // Display projects
+        function displayProjects() {
+            const container = document.getElementById('projectsContainer');
+            let html = '';
+
+            const batches = Object.keys(projectsData).sort().reverse();
+
+            if (batches.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No projects found.</p>';
+                container.style.display = 'block';
+                return;
+            }
+
+            batches.forEach((batch, index) => {
+                const projects = projectsData[batch];
+
+                html += `
+                    <div class="batch-section ${index === 0 ? 'open' : ''}" data-batch="${batch}">
+                        <div class="batch-header" onclick="toggleBatch('${batch}')">
+                            <div class="batch-title">${batch} (${projects.length} projects)</div>
+                            <i class="fas fa-chevron-down batch-toggle"></i>
+                        </div>
+                        <div class="batch-content">
+                            <div class="projects-container">
+                                ${projects.map(project => `
+                                    <div class="project-card">
+                                        <div class="project-thumbnail">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div class="project-info">
+                                            <h3>${project.title}</h3>
+                                        </div>
+                                        <a href="${project.url}" target="_blank" class="project-view-btn">View</a>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            container.style.display = 'block';
+            
+            console.log(`✅ Displayed ${batches.reduce((sum, b) => sum + projectsData[b].length, 0)} projects across ${batches.length} batches`);
+        }
+
+        // Display update info
+        function displayUpdateInfo(data) {
+            const infoDiv = document.getElementById('updateInfo');
+            const date = new Date(data.last_updated);
+            const timeAgo = getTimeAgo(date);
+            
+            infoDiv.innerHTML = `
+                <i class="fas fa-sync-alt"></i>
+                Data automatically updated ${timeAgo} | 
+                ${data.total_projects} projects across ${data.total_batches} batches
+            `;
+            infoDiv.style.display = 'block';
+        }
+
+        // Get human-readable time ago
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            
+            const intervals = {
+                year: 31536000,
+                month: 2592000,
+                week: 604800,
+                day: 86400,
+                hour: 3600,
+                minute: 60
+            };
+            
+            for (let [name, seconds_in_interval] of Object.entries(intervals)) {
+                const interval = Math.floor(seconds / seconds_in_interval);
+                if (interval >= 1) {
+                    return interval === 1 ? `1 ${name} ago` : `${interval} ${name}s ago`;
+                }
+            }
+            
+            return 'just now';
+        }
+
+        // Toggle batch section
+        function toggleBatch(batch) {
+            const section = document.querySelector(`[data-batch="${batch}"]`);
+            section.classList.toggle('open');
+        }
+
+        // Show/hide states
+        function hideLoading() {
+            document.getElementById('loadingState').style.display = 'none';
+        }
+
+        function showError() {
+            document.getElementById('loadingState').innerHTML = `
+                <i class="fas fa-exclamation-triangle" style="color: #ff5252;"></i>
+                <p style="margin-top: 1rem; color: #ff5252;">
+                    Unable to load projects data. Please try refreshing the page.
+                </p>
+            `;
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchProjectsData();
+        });
+    </script>
+</body>
+</html>
