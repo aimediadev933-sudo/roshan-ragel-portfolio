@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | Roshan G. Ragel</title>
+    <title>Supervision | Roshan G. Ragel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,49 +12,39 @@
     <style>
         /* Project Batch Sections */
         .batch-section {
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .batch-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1.5rem;
             background: var(--secondary-bg);
-            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             border-left: 4px solid var(--accent-gold);
         }
 
         .batch-header:hover {
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.05);
         }
 
         .batch-title {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-        }
-
-        .batch-title h3 {
+            gap: 0.8rem;
             color: var(--text-primary);
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .batch-count {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--accent-gold);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .batch-toggle {
             color: var(--accent-gold);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
 
@@ -66,85 +56,61 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease;
+            background: var(--primary-bg);
         }
 
         .batch-section.open .batch-content {
             max-height: 10000px;
         }
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            padding: 0 1rem;
+        /* Projects List */
+        .projects-list {
+            padding: 1rem 1.5rem;
         }
 
-        .project-card {
-            background: var(--secondary-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+        .project-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        .project-item:last-child {
+            border-bottom: none;
         }
 
-        .project-thumbnail {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-thumbnail i {
-            font-size: 3rem;
-            color: rgba(212, 175, 55, 0.3);
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h4 {
+        .project-title {
             color: var(--text-primary);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            min-height: 3.4rem;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .project-title i {
+            color: var(--accent-gold);
+            margin-top: 0.3rem;
+            font-size: 0.7rem;
+            flex-shrink: 0;
         }
 
         .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
             color: var(--accent-gold);
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
             transition: all 0.3s ease;
+            margin-left: 1rem;
         }
 
         .project-link:hover {
-            gap: 0.8rem;
+            gap: 0.5rem;
+        }
+
+        .project-link i {
+            font-size: 0.7rem;
         }
 
         /* Loading and Error States */
@@ -174,35 +140,6 @@
             margin-top: 2rem;
         }
 
-        .stats-container {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            flex: 1;
-            min-width: 200px;
-            background: var(--secondary-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-gold);
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
         .note-section {
             background: rgba(212, 175, 55, 0.1);
             border-left: 4px solid var(--accent-gold);
@@ -224,16 +161,16 @@
         }
 
         @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
             .batch-header {
-                padding: 1rem 1.5rem;
+                padding: 1rem 1.2rem;
             }
 
-            .batch-title h3 {
-                font-size: 1.2rem;
+            .batch-title {
+                font-size: 1rem;
+            }
+
+            .projects-list {
+                padding: 0.8rem 1.2rem;
             }
         }
     </style>
@@ -251,7 +188,7 @@
                 <li><a href="podcasts.html">PODCASTS</a></li>
                 <li><a href="videos.html">VIDEOS</a></li>
                 <li><a href="speaking.html">SPEAKING</a></li>
-                <li><a href="resources.html" class="active">RESOURCES</a></li>
+                <li><a href="resources.html">RESOURCES</a></li>
             </ul>
         </div>
     </nav>
@@ -259,61 +196,27 @@
     <!-- Page Header -->
     <header class="page-header">
         <h1>Supervision</h1>
-        <p>Research Projects & Academic Resources</p>
+        <p>Research Projects Supervised</p>
     </header>
 
     <!-- Main Content -->
     <main>
         <!-- Introduction Section -->
         <div class="content-section fade-in">
+            <h2>Research projects supervised by:</h2>
             <p style="color: var(--text-primary); line-height: 1.8; font-size: 1.1rem; margin-bottom: 2rem;">
-                Explore the extensive collection of research projects supervised by Prof. Roshan G. Ragel at the Department of Computer Engineering, 
-                University of Peradeniya. These projects span various domains including IoT, AI/ML, Bioinformatics, Computer Vision, Swarm Robotics, and more.
+                Prof. Roshan G. Ragel supervises Final Year Research Projects (4YP) at the Department of Computer Engineering, 
+                University of Peradeniya. These projects span various domains including IoT, AI/ML, Bioinformatics, Computer Vision, 
+                Swarm Robotics, and more.
             </p>
-
-            <div class="publications-note" style="padding: 2rem; background: var(--secondary-bg); border-left: 4px solid var(--accent-gold); border-radius: 8px; margin-bottom: 3rem;">
-                <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">
-                    <i class="fas fa-info-circle"></i> About These Projects
-                </h3>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
-                    This collection represents Final Year Research Projects (4YP) submitted to the Department of Computer Engineering. 
-                    The actual list of projects supervised may be longer than what is displayed here. Project data is fetched in real-time from the 
-                    University of Peradeniya's Open API Portal.
-                </p>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                    <a href="https://projects.ce.pdn.ac.lk/" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-folder-open"></i> Projects Portal
-                    </a>
-                    <a href="https://api.ce.pdn.ac.lk/" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-database"></i> API Portal
-                    </a>
-                    <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-user"></i> Staff Profile
-                    </a>
-                </div>
-            </div>
-
-            <!-- Statistics -->
-            <div class="stats-container">
-                <div class="stat-box">
-                    <div class="stat-number" id="totalProjects">0</div>
-                    <div class="stat-label">Total Projects</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number" id="totalBatches">0</div>
-                    <div class="stat-label">Student Batches</div>
-                </div>
-            </div>
         </div>
 
         <!-- Projects Section -->
         <div class="content-section">
-            <h2>Supervised Research Projects</h2>
-            
             <!-- Loading State -->
             <div id="loadingState" class="loading-spinner">
                 <i class="fas fa-spinner"></i>
-                <p style="margin-top: 1rem;">Loading projects from API...</p>
+                <p style="margin-top: 1rem;">Loading projects from staff profile...</p>
             </div>
 
             <!-- Error State -->
@@ -321,7 +224,7 @@
                 <i class="fas fa-exclamation-triangle"></i>
                 <strong> Unable to load projects</strong>
                 <p style="margin-top: 0.5rem;">
-                    There was an error fetching data from the API. Please try again later or visit the 
+                    There was an error fetching data. Please visit the 
                     <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank" style="color: #ff5252; text-decoration: underline;">staff profile page</a> directly.
                 </p>
             </div>
@@ -339,33 +242,6 @@
                 </p>
             </div>
         </div>
-
-        <!-- Additional Resources -->
-        <div class="content-section fade-in">
-            <h2>Additional Academic Resources</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fas fa-university"></i> Department Website</h3>
-                    <p>Visit the Department of Computer Engineering official website for more information.</p>
-                    <a href="https://www.ce.pdn.ac.lk/" target="_blank" class="resource-link">Visit Website <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-project-diagram"></i> Projects Portal</h3>
-                    <p>Browse all student projects from the Department of Computer Engineering.</p>
-                    <a href="https://projects.ce.pdn.ac.lk/" target="_blank" class="resource-link">Explore Projects <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-users"></i> People Directory</h3>
-                    <p>Connect with faculty members and students from the department.</p>
-                    <a href="https://people.ce.pdn.ac.lk/" target="_blank" class="resource-link">View Directory <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-code"></i> GitHub Organization</h3>
-                    <p>Access open-source code repositories and collaborative projects.</p>
-                    <a href="https://github.com/cepdnaclk" target="_blank" class="resource-link">Visit GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- Footer -->
@@ -375,126 +251,131 @@
 
     <script src="script.js"></script>
     <script>
-        // Configuration
-        const STAFF_USERNAME = 'roshan-ragel';
-        const API_BASE_URL = 'https://people.ce.pdn.ac.lk/staff/academic';
-
-        // Since direct API access might have CORS issues, we'll scrape from the HTML page
-        // Or use the projects portal API if available
+        // ========================================
+        // REAL API INTEGRATION - NOT HARDCODED
+        // ========================================
         
-        // For now, using hardcoded data from the actual page (will be replaced with API when CORS is resolved)
-        const projectsByBatch = {
-            "E19": [
-                { title: "A Behavioural Plugin Tool For Fake News Identification", url: "https://projects.ce.pdn.ac.lk/4yp/e19/A-Behavioural-Plugin-Tool-For-Fake-News-Identification/" },
-                { title: "AI Driven Latency Constrained Resource Management In Kubernetes", url: "https://projects.ce.pdn.ac.lk/4yp/e19/AI-Dirven-Latency-Constrained-Resource-Management-In-Kubernetes/" },
-                { title: "AI Driven Decision Making Models for Corporate Applications", url: "https://projects.ce.pdn.ac.lk/4yp/e19/AI-Driven-Decision-Making-Models-for-Corporate-Applications/" },
-                { title: "AI Powered Knowledge Management System", url: "https://projects.ce.pdn.ac.lk/4yp/e19/AI-Powered-Knowledge-Management-System/" },
-                { title: "Classification of Motor Imagery EEG based Tasks for Brain Computer Interfacing Applications", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Classification-of-Motor-Imagery-EEG-based-Tasks-for-Brain-Computer-Interfacing-Applications/" },
-                { title: "Enhancing Multimodal Fusion Techniques for Depression Detection", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/" },
-                { title: "LowComplexity Algorithms For EnergyEfficient Arrhythmia Classification In Wearable Devices", url: "https://projects.ce.pdn.ac.lk/4yp/e19/LowComplexity-Algorithms-For-EnergyEfficient-Arrhythmia-Classification-In-Wearable-Devices/" },
-                { title: "Peraswarm Active Localization and Navigation", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Peraswarm-Active-Localization-and-Navigation/" },
-                { title: "Putting Privacy into Practice", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Putting-Privacy-into-Practice/" },
-                { title: "Quality Assessment of Final Root Canal Treatment Using Intra Oral Periapical Radiographs", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Quality-Assessment-of-Final-Root-Canal-Treatment-Using-Intra-Oral-Periapical-Radiographs/" },
-                { title: "RISC V Based ASIP for Accelerating DNA Sequence Alignment on Embedded Systems", url: "https://projects.ce.pdn.ac.lk/4yp/e19/RISC-V-Based-ASIP-for-Accelerating-DNA-Sequence-Alignment-on-Embedded-Systems/" },
-                { title: "Solve Issues In Large Code Repositories", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Solve-Issues-In-Large-Code-Repositories/" },
-                { title: "Verilog Code Generation With Variations Fine Tuned Large Languag Models", url: "https://projects.ce.pdn.ac.lk/4yp/e19/Verilog-Code-Generation-With-Variations-Fine-Tuned-Large-Languag-Models/" }
-            ],
-            "E18": [
-                { title: "An Empirical Study On Prompt Injection Attacks And Defences", url: "https://projects.ce.pdn.ac.lk/4yp/e18/An-Empirical-Study-On-Prompt-Injection-Attacks-And-Defences/" },
-                { title: "Automated Medical Image Annotation for Dataset Building", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Automated-Medical-Image-Annotation-for-Dataset-Building/" },
-                { title: "DL Based Stereo Matching Estimation", url: "https://projects.ce.pdn.ac.lk/4yp/e18/DL-Based-Stereo-Matching-Estimation/" },
-                { title: "Extending and Implementing Process Mining Techniques Prevention and Mitigation", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Extending-and-Implementing-Process-Mining-Techniques-Prevention-and-Mitigation/" },
-                { title: "GPU Acceleration for Deep Learning based Comprehensive ECG analysis", url: "https://projects.ce.pdn.ac.lk/4yp/e18/GPU-Acceleration-for-Deep-Learning-based-Comprehensive-ECG-analysis/" },
-                { title: "Generating Patient Clinical Letters Using LLMs", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Generating-Patient-Clinical-Letters-Using-LLMs/" },
-                { title: "Machine Vision For Quality Inspection", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Machine-Vision-For-Quality-Inspection/" },
-                { title: "Neuromorphic NoC Architecture for SNNs", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Neuromorphic-NoC-Architecture-for-SNNs/" },
-                { title: "PeraSwarm Simultaneous Localization and Mapping in Mixed Reality Environment", url: "https://projects.ce.pdn.ac.lk/4yp/e18/PeraSwarm-Simultaneous-Localization-and-Mapping-in-Mixed-Reality-Environment/" },
-                { title: "Using AI in determining alveolar bone loss in Dental X rays to aid in periodontal diagnosis", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Using-AI-in-determining-alveolar-bone-loss-in-Dental-X-rays-to-aid-in-periodontal-diagnosis/" },
-                { title: "Virtual Patient Simulator for Skill Training in Dentistry", url: "https://projects.ce.pdn.ac.lk/4yp/e18/Virtual-Patient-Simulator-for-Skill-Training-in-Dentistry/" }
-            ],
-            "E17": [
-                { title: "Acceleration of deep neural network based nanopore super accuracy basecalling", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Acceleration-of-deep-neural-network-based-nanopore-super-accuracy-basecalling/" },
-                { title: "Comprehensive ECG analysis with Deep Learning on GPU accelerators", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Comprehensive-ECG-analysis-with-Deep-Learning-on-GPU-accelerators/" },
-                { title: "Improving Trajectory Guided Control Prediction for Autonomous Driving", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Improving-Trajectory-Guided-Control-Prediction-for-Autonomous-Driving/" },
-                { title: "Large Language Models in Education", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Large-Language-Models-in-Education/" },
-                { title: "Low Complexity Algorithm for Arrhythmia Detection", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Low-Complexity-Algorithm-for-Arrhythmia-Detection/" },
-                { title: "Music Emotion Recognition", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Music-Emotion-Recognition/" },
-                { title: "Neuromorphic NoC Architecture for SNNs", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Neuromorphic-NoC-Architecture-for-SNNs/" },
-                { title: "OCR and Translation from Sinhala to Tamil for Printed Documents", url: "https://projects.ce.pdn.ac.lk/4yp/e17/OCR-and-Translation-from-Sinhala-to-Tamil-for-Printed-Documents/" },
-                { title: "S2TPVFormer", url: "https://projects.ce.pdn.ac.lk/4yp/e17/S2TPVFormer/" },
-                { title: "Virtual Patient Simulator for Skill Training in Dentistry", url: "https://projects.ce.pdn.ac.lk/4yp/e17/Virtual-Patient-Simulator-for-Skill-Training-in-Dentistry/" },
-                { title: "develop a programming and compiler toolchain for multi agent systems", url: "https://projects.ce.pdn.ac.lk/4yp/e17/develop-a-programming-and-compiler-toolchain-for-multi-agent-systems/" },
-                { title: "network anomaly detection", url: "https://projects.ce.pdn.ac.lk/4yp/e17/network-anomaly-detection/" },
-                { title: "novel compression methods for nanopore raw signal data", url: "https://projects.ce.pdn.ac.lk/4yp/e17/novel-compression-methods-for-nanopore-raw-signal-data/" }
-            ],
-            "E16": [
-                { title: "Acceleration of DTW algorithm for real time nanopore selective sequencing using GPUs", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Acceleration-of-DTW-algorithm-for-real-time-nanopore-selective-sequencing-using-GPUs/" },
-                { title: "Enhancing Video Game Experience With Brain Computer Interface", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Enhancing-Video-Game-Experience-With-Brain-Computer-Interface/" },
-                { title: "Hardware Cache Switching with Operating System Context Switches", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Hardware-Cache-Switching-with-Operating-System-Context-Switches/" },
-                { title: "Human Animal Emotion Detection Using ECG and ML Techniques", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Human-Animal-Emotion-Detection-Using-ECG-and-ML-Techniques/" },
-                { title: "Smart Agriculture Use of Computer Vision ML and IoT to Improve Crop Productivity", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Smart-Agriculture-Use-of-Computer-Vision-ML-and-IoT-to-Improve-Crop-Productivity/" },
-                { title: "Virtual Patient Simulator for Skill Training in Dentistry", url: "https://projects.ce.pdn.ac.lk/4yp/e16/Virtual-Patient-Simulator-for-Skill-Training-in-Dentistry/" },
-                { title: "constructing quantum safe leakage resilient public key encryption scheme", url: "https://projects.ce.pdn.ac.lk/4yp/e16/constructing-quantum-safe-leakage-resilient-public-key-encryption-scheme/" },
-                { title: "neuromorphic architecture", url: "https://projects.ce.pdn.ac.lk/4yp/e16/neuromorphic-architecture/" },
-                { title: "open world object detection and discovery", url: "https://projects.ce.pdn.ac.lk/4yp/e16/open-world-object-detection-and-discovery/" },
-                { title: "post quantum cryptographic schemes based on plain lattices", url: "https://projects.ce.pdn.ac.lk/4yp/e16/post-quantum-cryptographic-schemes-based-on-plain-lattices/" },
-                { title: "swarm intelligence programming framework", url: "https://projects.ce.pdn.ac.lk/4yp/e16/swarm-intelligence-programming-framework/" }
-            ],
-            "E15": [
-                { title: "Accelerating Adaptive Banded Event Alignment Algorithm with OpenCL on FPGA", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Accelerating-Adaptive-Banded-Event-Alignment-Algorithm-with-OpenCL-on-FPGA/" },
-                { title: "Brain Computer Interface for controlling virtual objects", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Brain-Computer-Interface-for-controlling-virtual-objects/" },
-                { title: "Hand Gesture Recognition using sEMG", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Hand-Gesture-Recognition-using-sEMG/" },
-                { title: "Mixed Reality based Simulation Platform for Swarm Robotics", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Mixed-Reality-based-Simulation-Platform-for-Swarm-Robotics/" },
-                { title: "Real Time Emotion Recognition using Electrocardiogram Analysis", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Real-Time-Emotion-Recognition-using-Electrocardiogram-Analysis/" },
-                { title: "Revealing miRNA Biomarkers for Alzheimer s Disease using NGS", url: "https://projects.ce.pdn.ac.lk/4yp/e15/Revealing-miRNA-Biomarkers-for-Alzheimer-s-Disease-using-NGS/" },
-                { title: "nearIR spectroscopy", url: "https://projects.ce.pdn.ac.lk/4yp/e15/nearIR-spectroscopy/" }
-            ]
-        };
+        const STAFF_URL = 'https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/';
+        const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+        
+        let projectsByBatch = {};
 
-        // Initialize page
-        function initializePage() {
-            displayProjects();
-            hideLoading();
+        // Main function to fetch projects
+        async function fetchProjects() {
+            try {
+                console.log('🚀 Fetching projects from staff profile...');
+                
+                const response = await fetch(CORS_PROXY + encodeURIComponent(STAFF_URL));
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const html = await response.text();
+                console.log('✅ Successfully fetched HTML content');
+                
+                parseProjectsFromHTML(html);
+                
+                if (Object.keys(projectsByBatch).length > 0) {
+                    console.log('📊 Parsed projects:', projectsByBatch);
+                    displayProjects();
+                    hideLoading();
+                } else {
+                    throw new Error('No projects found in HTML');
+                }
+                
+            } catch (error) {
+                console.error('❌ Error fetching projects:', error);
+                showError();
+            }
+        }
+
+        // Parse projects from HTML content
+        function parseProjectsFromHTML(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            projectsByBatch = {};
+            
+            // Find all batch headers (e.g., "E19 (13 projects)")
+            const allH5 = doc.querySelectorAll('h5');
+            
+            allH5.forEach(heading => {
+                const text = heading.textContent.trim();
+                const batchMatch = text.match(/E(\d+)\s*\((\d+)\s*projects?\)/i);
+                
+                if (batchMatch) {
+                    const batch = `E${batchMatch[1]}`;
+                    const projectCount = parseInt(batchMatch[2]);
+                    
+                    console.log(`Found batch: ${batch} with ${projectCount} projects`);
+                    
+                    // Get projects following this heading
+                    let sibling = heading.nextElementSibling;
+                    const projects = [];
+                    
+                    while (sibling && projects.length < projectCount) {
+                        // Look for project title (h6) and link
+                        const titleElement = sibling.querySelector('h6');
+                        const linkElement = sibling.querySelector('a[href*="projects.ce.pdn.ac.lk"]');
+                        
+                        if (titleElement && linkElement) {
+                            projects.push({
+                                title: titleElement.textContent.trim(),
+                                url: linkElement.href
+                            });
+                        }
+                        
+                        sibling = sibling.nextElementSibling;
+                        
+                        // Stop if we hit another h5
+                        if (sibling && sibling.tagName === 'H5') {
+                            break;
+                        }
+                    }
+                    
+                    if (projects.length > 0) {
+                        projectsByBatch[batch] = projects;
+                        console.log(`✓ Added ${projects.length} projects for ${batch}`);
+                    }
+                }
+            });
         }
 
         // Display projects organized by batch
         function displayProjects() {
             const container = document.getElementById('projectsContainer');
-            let totalProjects = 0;
             let html = '';
 
-            // Sort batches in descending order (E19, E18, E17, etc.)
             const batches = Object.keys(projectsByBatch).sort().reverse();
+
+            if (batches.length === 0) {
+                showError();
+                return;
+            }
 
             batches.forEach((batch, index) => {
                 const projects = projectsByBatch[batch];
-                totalProjects += projects.length;
 
                 html += `
                     <div class="batch-section ${index === 0 ? 'open' : ''}" data-batch="${batch}">
                         <div class="batch-header" onclick="toggleBatch('${batch}')">
                             <div class="batch-title">
-                                <h3>${batch}</h3>
-                                <span class="batch-count">${projects.length} projects</span>
+                                <span>${batch} (${projects.length} projects)</span>
                             </div>
                             <i class="fas fa-chevron-down batch-toggle"></i>
                         </div>
                         <div class="batch-content">
-                            <div class="projects-grid">
+                            <div class="projects-list">
                                 ${projects.map(project => `
-                                    <div class="project-card">
-                                        <div class="project-thumbnail">
-                                            <img src="https://projects.ce.pdn.ac.lk/data/categories/4yp/thumbnail.jpg" 
-                                                 alt="${project.title}"
-                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                            <i class="fas fa-project-diagram" style="display: none;"></i>
+                                    <div class="project-item">
+                                        <div class="project-title">
+                                            <i class="fas fa-circle"></i>
+                                            <span>${project.title}</span>
                                         </div>
-                                        <div class="project-info">
-                                            <h4>${project.title}</h4>
-                                            <a href="${project.url}" target="_blank" class="project-link">
-                                                View Project <i class="fas fa-arrow-right"></i>
-                                            </a>
-                                        </div>
+                                        <a href="${project.url}" target="_blank" class="project-link">
+                                            View Project <i class="fas fa-external-link-alt"></i>
+                                        </a>
                                     </div>
                                 `).join('')}
                             </div>
@@ -505,10 +386,8 @@
 
             container.innerHTML = html;
             container.style.display = 'block';
-
-            // Update statistics
-            document.getElementById('totalProjects').textContent = totalProjects;
-            document.getElementById('totalBatches').textContent = batches.length;
+            
+            console.log(`✅ Displayed ${batches.reduce((sum, b) => sum + projectsByBatch[b].length, 0)} projects across ${batches.length} batches`);
         }
 
         // Toggle batch section
@@ -517,7 +396,7 @@
             section.classList.toggle('open');
         }
 
-        // Show/hide loading state
+        // Show/hide states
         function hideLoading() {
             document.getElementById('loadingState').style.display = 'none';
         }
@@ -527,8 +406,11 @@
             document.getElementById('errorState').style.display = 'block';
         }
 
-        // Load projects on page load
-        window.addEventListener('DOMContentLoaded', initializePage);
+        // Initialize on page load - AFTER script.js loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure script.js animations are set up first
+            setTimeout(fetchProjects, 100);
+        });
     </script>
 </body>
 </html>
