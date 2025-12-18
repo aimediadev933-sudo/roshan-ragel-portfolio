@@ -177,6 +177,107 @@
             font-weight: 600;
         }
 
+        /* Students Grid Styles */
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .student-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            border: 1px solid rgba(100, 149, 237, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .student-card:hover {
+            border-color: rgba(100, 149, 237, 0.3);
+            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.1);
+        }
+
+        .student-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid rgba(100, 149, 237, 0.2);
+        }
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .student-info {
+            flex: 1;
+        }
+
+        .student-info h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .student-degree {
+            color: #6495ED;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+
+        .student-topic {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 0.3rem 0;
+            font-style: italic;
+        }
+
+        .student-supervision {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 0.3rem 0;
+            line-height: 1.5;
+        }
+
+        .supervision-note {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        .supervision-note h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .supervision-note p:first-of-type {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .supervision-note p:last-of-type {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .supervision-note a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
             .project-card {
                 flex-direction: column;
@@ -190,6 +291,16 @@
 
             .project-view-btn {
                 width: 100%;
+            }
+
+            .students-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .student-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
             }
         }
     </style>
@@ -250,6 +361,195 @@
                     Please note that here only contain the "Projects" which were submitted to 
                     <a href="https://projects.ce.pdn.ac.lk/" target="_blank">projects.ce.pdn.ac.lk</a> as Final Year Research Projects. 
                     The actual list of projects supervised by Prof. Ragel may be longer than this.
+                </p>
+            </div>
+        </div>
+
+        <!-- Postgraduate Students Section -->
+        <div class="content-section fade-in fade-in-delay-3">
+            <h2>Postgraduate Students</h2>
+            
+            <h3 style="color: var(--accent-gold); margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.5rem;">PhD Candidates</h3>
+            
+            <div class="students-grid">
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/mathuranthagaa-selvaratnam.jpg" alt="Mathuranthagaa Selvaratnam" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Mathuranthagaa Selvaratnam</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-supervision">Co-supervised with Muttukrishnan Rajarajan, City, University of London</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/romiyal-george.jpg" alt="Romiyal George" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Romiyal George</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-topic">Plant Diseases Detection</p>
+                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/m-santhanakrishnan.jpg" alt="M Santhanakrishnan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M Santhanakrishnan</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia and Siyamalan Manivannan, University of Jaffna</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/kanagasabai-thiruthanigesan.jpg" alt="Kanagasabai Thiruthanigesan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kanagasabai Thiruthanigesan</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-supervision">Co-supervised with Ruwan Nawarathna, CS, UoP</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/roshan-pushpakumara.jpg" alt="Roshan Pushpakumara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Roshan Pushpakumara</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/s-nimishan.jpg" alt="S Nimishan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S Nimishan</h4>
+                        <p class="student-degree">PhD Candidate</p>
+                        <p class="student-supervision">Co-supervised with Thuseethan Selvarajah, Charles Darwin University, Australia and S. Vasanthapriyan (SUSL)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--accent-gold); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem;">Masters Candidates</h3>
+            
+            <div class="students-grid">
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/anjana-senanayake.jpg" alt="Anjana Senanayake" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Anjana Senanayake</h4>
+                        <p class="student-degree">MPhil</p>
+                        <p class="student-supervision">Co-supervised with Hasindu Gamaarachchi (UNSW, Sydney) and Damayanthi Herath (UoP)</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/rukshani-puvanendran.jpg" alt="Rukshani Puvanendran" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Rukshani Puvanendran</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Asanka P. Sayakkara (UCSC)</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/rasendram-muralitharan.jpg" alt="Rasendram Muralitharan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Rasendram Muralitharan</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Upul Jayasinghe (UoP)</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/sandaruwan-herath.jpg" alt="Sandaruwan Herath" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Sandaruwan Herath</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Prabhath Gunathilake</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/warunika-hippola.jpg" alt="Warunika Hippola" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Warunika Hippola</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/hasini-vindiya-athauda.jpg" alt="Hasini Vindiya Athauda" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Hasini Vindiya Athauda</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Upul Jayasinghe</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/h-hashan.jpg" alt="H Hashan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>H Hashan</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Asitha Bandaranayake (UoP)</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/dinusha-premasiri.jpg" alt="Dinusha Premasiri" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Dinusha Premasiri</h4>
+                        <p class="student-degree">MPhil Candidate</p>
+                        <p class="student-supervision">Co-supervised with Isuru Nawinne</p>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="students/charunika-dampalessa.jpg" alt="Charunika Dampalessa" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Charunika Dampalessa</h4>
+                        <p class="student-degree">MSc by Research Candidate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="supervision-note">
+                <h3>Available for Supervision</h3>
+                <p>Yes (limited availability)</p>
+                <p>
+                    Prof. Ragel is accepting new postgraduate students for PhD and Masters programs with limited availability. 
+                    Research areas include Internet of Things, Artificial Intelligence & Machine Learning, 
+                    Bioinformatics, Computer Architecture, Wearable Computing, and Engineering Education. 
+                    For supervision inquiries, please contact via email at <a href="mailto:roshanr@pdn.ac.lk">roshanr@pdn.ac.lk</a>
                 </p>
             </div>
         </div>
