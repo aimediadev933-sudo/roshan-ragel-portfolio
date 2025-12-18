@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Override root colors for this page */
+        :root {
+            --primary-teal: #1a8b8b;
+            --light-teal: #00CED1;
+            --teal-bg: rgba(26, 139, 139, 0.1);
+            --teal-border: rgba(26, 139, 139, 0.2);
+        }
+
         /* Project Batch Sections */
         .batch-section {
             margin-bottom: 2rem;
@@ -23,23 +31,23 @@
             align-items: center;
             justify-content: space-between;
             padding: 1.2rem 1.5rem;
-            background: rgba(100, 149, 237, 0.1);
+            background: var(--teal-bg);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .batch-header:hover {
-            background: rgba(100, 149, 237, 0.15);
+            background: rgba(26, 139, 139, 0.15);
         }
 
         .batch-title {
-            color: #6495ED;
+            color: var(--primary-teal);
             font-size: 1.1rem;
             font-weight: 600;
         }
 
         .batch-toggle {
-            color: #6495ED;
+            color: var(--primary-teal);
             font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
@@ -70,20 +78,20 @@
             padding: 1.2rem;
             margin-bottom: 1rem;
             background: var(--primary-bg);
-            border: 1px solid rgba(100, 149, 237, 0.2);
+            border: 1px solid var(--teal-border);
             border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .project-card:hover {
-            border-color: rgba(100, 149, 237, 0.4);
-            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.1);
+            border-color: rgba(26, 139, 139, 0.4);
+            box-shadow: 0 4px 12px rgba(26, 139, 139, 0.1);
         }
 
         .project-thumbnail {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #3b5998 0%, #6495ED 100%);
+            background: linear-gradient(135deg, #138888 0%, #00CED1 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -111,8 +119,8 @@
         .project-view-btn {
             padding: 0.5rem 1.5rem;
             background: transparent;
-            border: 2px solid #6495ED;
-            color: #6495ED;
+            border: 2px solid var(--primary-teal);
+            color: var(--primary-teal);
             border-radius: 4px;
             font-weight: 600;
             text-decoration: none;
@@ -121,7 +129,7 @@
         }
 
         .project-view-btn:hover {
-            background: #6495ED;
+            background: var(--primary-teal);
             color: white;
         }
 
@@ -134,7 +142,7 @@
 
         .loading-spinner i {
             font-size: 3rem;
-            color: #6495ED;
+            color: var(--primary-teal);
             animation: spin 1s linear infinite;
         }
 
@@ -153,7 +161,7 @@
         }
 
         .update-info i {
-            color: #6495ED;
+            color: var(--primary-teal);
             margin-right: 0.3rem;
         }
 
@@ -191,13 +199,13 @@
             padding: 1.5rem;
             background: var(--secondary-bg);
             border-radius: 8px;
-            border: 1px solid rgba(100, 149, 237, 0.1);
+            border: 1px solid var(--teal-border);
             transition: all 0.3s ease;
         }
 
         .student-card:hover {
-            border-color: rgba(100, 149, 237, 0.3);
-            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.1);
+            border-color: rgba(26, 139, 139, 0.3);
+            box-shadow: 0 4px 12px rgba(26, 139, 139, 0.1);
         }
 
         .student-photo {
@@ -206,7 +214,7 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
-            border: 3px solid rgba(100, 149, 237, 0.2);
+            border: 3px solid var(--teal-border);
         }
 
         .student-photo img {
@@ -220,14 +228,14 @@
         }
 
         .student-info h4 {
-            color: var(--text-primary);
+            color: var(--light-teal);
             font-size: 1.1rem;
             font-weight: 600;
             margin: 0 0 0.5rem 0;
         }
 
         .student-degree {
-            color: #6495ED;
+            color: var(--text-primary);
             font-weight: 600;
             font-size: 0.9rem;
             margin: 0.3rem 0;
