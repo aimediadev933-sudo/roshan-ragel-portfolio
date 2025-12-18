@@ -188,7 +188,7 @@
         /* Students Grid Styles */
         .students-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -196,12 +196,10 @@
         .student-card {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: #f5f0e8;
+            background: #F5F5DC;
             border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
@@ -213,45 +211,26 @@
         }
 
         .student-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
+            width: 100%;
+            height: 280px;
             overflow: hidden;
-            flex-shrink: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-            padding: 6px;
-            margin-bottom: 1.5rem;
-            animation: gradient-rotate 3s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes gradient-rotate {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            background: #e0e0e0;
         }
 
         .student-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 6px;
-            border: 4px solid white;
         }
 
         .student-info {
-            width: 100%;
+            padding: 1.5rem;
+            text-align: left;
         }
 
         .student-info h4 {
             color: var(--light-teal);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin: 0 0 0.5rem 0;
         }
@@ -259,7 +238,7 @@
         .student-degree {
             color: #000000 !important;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin: 0.5rem 0;
         }
 
@@ -328,8 +307,7 @@
             }
 
             .student-photo {
-                width: 160px;
-                height: 160px;
+                height: 220px;
             }
         }
     </style>
