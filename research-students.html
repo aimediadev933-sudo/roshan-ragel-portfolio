@@ -153,6 +153,44 @@
             font-size: 1.2rem;
         }
 
+/* Add this CSS to your existing <style> section in research-students.html */
+
+/* View Profile Button Styles */
+.view-profile-btn {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.view-profile-btn:hover {
+    background: var(--primary-teal);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(26, 139, 139, 0.3);
+}
+
+.view-profile-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .view-profile-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+
         @media (max-width: 768px) {
             .students-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -182,11 +220,11 @@
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="research-students.html">Research Students</a></li>
                 <li><a href="podcasts.html">PODCASTS</a></li>
                 <li><a href="videos.html">VIDEOS</a></li>
                 <li><a href="speaking.html">SPEAKING</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="research-students.html">Research Students</a></li>
             </ul>
         </div>
     </nav>
@@ -625,17 +663,1106 @@
             <div class="students-grid">
                 <div class="student-card">
                     <div class="student-photo">
-                        <img src="students/placeholder.jpg" alt="E23 Student" onerror="this.src='students/placeholder.jpg'">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23001.jpg" alt="Abesekara A. W. A. V. D." onerror="this.src='students/placeholder.jpg'">
                     </div>
                     <div class="student-info">
-                        <h4>Student Name</h4>
-                        <p class="student-degree">Final Year Research Project (4YP)</p>
-                        <p class="student-topic">Project Title</p>
-                        <p class="student-supervision">Co-supervised with [Supervisor Name]</p>
+                        <h4>Abesekara A. W. A. V. D.</h4>
+                        <p class="student-degree">E/23/001</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/001/" target="_blank" class="view-profile-btn">View</a>
                     </div>
                 </div>
-                <!-- Add more E23 students here -->
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23009.jpg" alt="Y.Akalyan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Y.Akalyan</h4>
+                        <p class="student-degree">E/23/009</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/009/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23011.jpg" alt="Akshayaa.P" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Akshayaa.P</h4>
+                        <p class="student-degree">E/23/011</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/011/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23012.jpg" alt="Alagiyawanna A.W.K.D.A." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Alagiyawanna A.W.K.D.A.</h4>
+                        <p class="student-degree">E/23/012</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/012/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23015.jpg" alt="Anusara K.A.A.I." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Anusara K.A.A.I.</h4>
+                        <p class="student-degree">E/23/015</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/015/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23016.jpg" alt="Anushka W.L.K." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Anushka W.L.K.</h4>
+                        <p class="student-degree">E/23/016</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/016/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23017.jpg" alt="Arachchi N. A. N. D. N." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Arachchi N. A. N. D. N.</h4>
+                        <p class="student-degree">E/23/017</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/017/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23019.jpg" alt="Arulanantham A." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Arulanantham A.</h4>
+                        <p class="student-degree">E/23/019</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/019/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23021.jpg" alt="T.W.S. Asen" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>T.W.S. Asen</h4>
+                        <p class="student-degree">E/23/021</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/021/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23023.jpg" alt="Aththanayake M.N.P.V." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Aththanayake M.N.P.V.</h4>
+                        <p class="student-degree">E/23/023</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/023/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23035.jpg" alt="P. I. N. Bandara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>P. I. N. Bandara</h4>
+                        <p class="student-degree">E/23/035</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/035/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23040.jpg" alt="V Birunthan" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>V Birunthan</h4>
+                        <p class="student-degree">E/23/040</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/040/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23041.jpg" alt="D.T. Chamodya" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D.T. Chamodya</h4>
+                        <p class="student-degree">E/23/041</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/041/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23043.jpg" alt="C.M.H.K.Chandrasekara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>C.M.H.K.Chandrasekara</h4>
+                        <p class="student-degree">E/23/043</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/043/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23044.jpg" alt="S.M.I.U.Chandrasena" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S.M.I.U.Chandrasena</h4>
+                        <p class="student-degree">E/23/044</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/044/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23050.jpg" alt="G.C.Damsiluni" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>G.C.Damsiluni</h4>
+                        <p class="student-degree">E/23/050</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/050/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23051.jpg" alt="Danthanarayana T.U." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Danthanarayana T.U.</h4>
+                        <p class="student-degree">E/23/051</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/051/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23054.jpg" alt="M.V.R. Dayananda" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.V.R. Dayananda</h4>
+                        <p class="student-degree">E/23/054</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/054/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23075.jpg" alt="K.K.Dilshara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>K.K.Dilshara</h4>
+                        <p class="student-degree">E/23/075</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/075/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23076.jpg" alt="Dineth M.T." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Dineth M.T.</h4>
+                        <p class="student-degree">E/23/076</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/076/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23077.jpg" alt="Dinojan J." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Dinojan J.</h4>
+                        <p class="student-degree">E/23/077</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/077/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23078.jpg" alt="Dinushan J." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Dinushan J.</h4>
+                        <p class="student-degree">E/23/078</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/078/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23082.jpg" alt="Dissanayake D.M.N.R" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Dissanayake D.M.N.R</h4>
+                        <p class="student-degree">E/23/082</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/082/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23084.jpg" alt="D.R.C.V.Dissanayake" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D.R.C.V.Dissanayake</h4>
+                        <p class="student-degree">E/23/084</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/084/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23089.jpg" alt="M.A.S. Dulshara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.A.S. Dulshara</h4>
+                        <p class="student-degree">E/23/089</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/089/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23093.jpg" alt="I.P.K.K.Ekanayaka" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>I.P.K.K.Ekanayaka</h4>
+                        <p class="student-degree">E/23/093</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/093/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23098.jpg" alt="M.R.J. Fernando" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.R.J. Fernando</h4>
+                        <p class="student-degree">E/23/098</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/098/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23100.jpg" alt="S.A.W. Fernando" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S.A.W. Fernando</h4>
+                        <p class="student-degree">E/23/100</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/100/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23104.jpg" alt="Gamage G P M" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Gamage G P M</h4>
+                        <p class="student-degree">E/23/104</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/104/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23105.jpg" alt="H.G.H.D. Gamage" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>H.G.H.D. Gamage</h4>
+                        <p class="student-degree">E/23/105</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/105/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23108.jpg" alt="W.G.R.P. Gamage" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>W.G.R.P. Gamage</h4>
+                        <p class="student-degree">E/23/108</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/108/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23116.jpg" alt="D.M.N.N.L.Gunathilake" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D.M.N.N.L.Gunathilake</h4>
+                        <p class="student-degree">E/23/116</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/116/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23117.jpg" alt="W.R.A.D.N. Gunathilake" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>W.R.A.D.N. Gunathilake</h4>
+                        <p class="student-degree">E/23/117</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/117/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23118.jpg" alt="Gunawardana D. A. A." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Gunawardana D. A. A.</h4>
+                        <p class="student-degree">E/23/118</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/118/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23122.jpg" alt="Gunawardhana P.H.S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Gunawardhana P.H.S.</h4>
+                        <p class="student-degree">E/23/122</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/122/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23127.jpg" alt="H.M.K.I.Herath" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>H.M.K.I.Herath</h4>
+                        <p class="student-degree">E/23/127</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/127/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23130.jpg" alt="Herath H. M. S. Y" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Herath H. M. S. Y</h4>
+                        <p class="student-degree">E/23/130</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/130/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23149.jpg" alt="Jayasinghe R.D.D.L." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Jayasinghe R.D.D.L.</h4>
+                        <p class="student-degree">E/23/149</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/149/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23157.jpg" alt="Sivapriya J." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Sivapriya J.</h4>
+                        <p class="student-degree">E/23/157</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/157/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23159.jpg" alt="Kalhara K.H.K.R." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kalhara K.H.K.R.</h4>
+                        <p class="student-degree">E/23/159</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/159/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23161.jpg" alt="Kanchana K. L. A. Y. R" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kanchana K. L. A. Y. R</h4>
+                        <p class="student-degree">E/23/161</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/161/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23162.jpg" alt="etharani K." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>etharani K.</h4>
+                        <p class="student-degree">E/23/162</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/162/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23167.jpg" alt="Karunarathna A. V. P. J. P." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Karunarathna A. V. P. J. P.</h4>
+                        <p class="student-degree">E/23/167</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/167/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23169.jpg" alt="Karunarathne B.A.D.K." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Karunarathne B.A.D.K.</h4>
+                        <p class="student-degree">E/23/169</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/169/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23178.jpg" alt="Kodituwakku S. N. R." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kodituwakku S. N. R.</h4>
+                        <p class="student-degree">E/23/178</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/178/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23182.jpg" alt="R.K. Kulasooriya" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>R.K. Kulasooriya</h4>
+                        <p class="student-degree">E/23/182</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/182/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23187.jpg" alt="Kumarasinghe K.M.D.S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kumarasinghe K.M.D.S.</h4>
+                        <p class="student-degree">E/23/187</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/187/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23188.jpg" alt="Kumarasinghe K.M.M.Y." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Kumarasinghe K.M.M.Y.</h4>
+                        <p class="student-degree">E/23/188</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/188/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23196.jpg" alt="Lakshani R.M.K.S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Lakshani R.M.K.S.</h4>
+                        <p class="student-degree">E/23/196</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/196/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23202.jpg" alt="Liyanagama K.L.D.H." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Liyanagama K.L.D.H.</h4>
+                        <p class="student-degree">E/23/202</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/202/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23204.jpg" alt="D. S. Liyanage" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D. S. Liyanage</h4>
+                        <p class="student-degree">E/23/204</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/204/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23211.jpg" alt="A.M.G.Mahisha Madubhashinie" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>A.M.G.Mahisha Madubhashinie</h4>
+                        <p class="student-degree">E/23/211</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/211/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23214.jpg" alt="Madusanka G.N.N.N." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Madusanka G.N.N.N.</h4>
+                        <p class="student-degree">E/23/214</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/214/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23226.jpg" alt="J. G. G. Methmaka" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>J. G. G. Methmaka</h4>
+                        <p class="student-degree">E/23/226</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/226/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23231.jpg" alt="Muhunthan V." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Muhunthan V.</h4>
+                        <p class="student-degree">E/23/231</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/231/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23244.jpg" alt="M.T.C. Newanma" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.T.C. Newanma</h4>
+                        <p class="student-degree">E/23/244</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/244/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23245.jpg" alt="Nilaxshan B" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Nilaxshan B</h4>
+                        <p class="student-degree">E/23/245</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/245/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23249.jpg" alt="M.M.M.A.Nular" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.M.M.A.Nular</h4>
+                        <p class="student-degree">E/23/249</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/249/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23256.jpg" alt="Paveenan S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Paveenan S.</h4>
+                        <p class="student-degree">E/23/256</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/256/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23266.jpg" alt="H.M.U.A. Perera" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>H.M.U.A. Perera</h4>
+                        <p class="student-degree">E/23/266</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/266/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23270.jpg" alt="Perera T. N. D." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Perera T. N. D.</h4>
+                        <p class="student-degree">E/23/270</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/270/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23271.jpg" alt="Perera U.T.N." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Perera U.T.N.</h4>
+                        <p class="student-degree">E/23/271</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/271/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23273.jpg" alt="A.Piraveen" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>A.Piraveen</h4>
+                        <p class="student-degree">E/23/273</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/273/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23274.jpg" alt="Piyathilake T." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Piyathilake T.</h4>
+                        <p class="student-degree">E/23/274</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/274/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23282.jpg" alt="Rahman M. R. A." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Rahman M. R. A.</h4>
+                        <p class="student-degree">E/23/282</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/282/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23289.jpg" alt="Rajeeth A." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Rajeeth A.</h4>
+                        <p class="student-degree">E/23/289</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/289/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23292.jpg" alt="K.S. Rambukkanage" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>K.S. Rambukkanage</h4>
+                        <p class="student-degree">E/23/292</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/292/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23294.jpg" alt="Ranasinghe E A D" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Ranasinghe E A D</h4>
+                        <p class="student-degree">E/23/294</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/294/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23299.jpg" alt="R.D.K.D Ranasinghe" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>R.D.K.D Ranasinghe</h4>
+                        <p class="student-degree">E/23/299</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/299/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23300.jpg" alt="S.M.R.S. Ranathunga" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S.M.R.S. Ranathunga</h4>
+                        <p class="student-degree">E/23/300</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/300/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23301.jpg" alt="Ranawaka U.I." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Ranawaka U.I.</h4>
+                        <p class="student-degree">E/23/301</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/301/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23302.jpg" alt="T.G.D.Randeep" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>T.G.D.Randeep</h4>
+                        <p class="student-degree">E/23/302</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/302/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23317.jpg" alt="Rathnayake R. M. S. N." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Rathnayake R. M. S. N.</h4>
+                        <p class="student-degree">E/23/317</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/317/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23336.jpg" alt="S.M.D.S.B. Samarakoon" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S.M.D.S.B. Samarakoon</h4>
+                        <p class="student-degree">E/23/336</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/336/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23340.jpg" alt="W.H.C.C. Samarasinghe" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>W.H.C.C. Samarasinghe</h4>
+                        <p class="student-degree">E/23/340</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/340/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23343.jpg" alt="Samarawickrama S. B. N. S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Samarawickrama S. B. N. S.</h4>
+                        <p class="student-degree">E/23/343</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/343/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23347.jpg" alt="Sandanayaka S. D. M. P." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Sandanayaka S. D. M. P.</h4>
+                        <p class="student-degree">E/23/347</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/347/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23351.jpg" alt="K. D. Sanjuna" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>K. D. Sanjuna</h4>
+                        <p class="student-degree">E/23/351</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/351/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23352.jpg" alt="N.A.Sara" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>N.A.Sara</h4>
+                        <p class="student-degree">E/23/352</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/352/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23360.jpg" alt="Semindi K. K. S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Semindi K. K. S.</h4>
+                        <p class="student-degree">E/23/360</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/360/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23362.jpg" alt="Senadheera S.N.V.N" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Senadheera S.N.V.N</h4>
+                        <p class="student-degree">E/23/362</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/362/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23369.jpg" alt="Senevirathne H A K" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Senevirathne H A K</h4>
+                        <p class="student-degree">E/23/369</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/369/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23382.jpg" alt="Silva P.H.G.L.M" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Silva P.H.G.L.M</h4>
+                        <p class="student-degree">E/23/382</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/382/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23384.jpg" alt="Simasa S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Simasa S.</h4>
+                        <p class="student-degree">E/23/384</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/384/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23387.jpg" alt="Srikaran K." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Srikaran K.</h4>
+                        <p class="student-degree">E/23/387</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/387/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23392.jpg" alt="Thanush V." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Thanush V.</h4>
+                        <p class="student-degree">E/23/392</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/392/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23393.jpg" alt="J.Thanushananth" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>J.Thanushananth</h4>
+                        <p class="student-degree">E/23/393</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/393/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23396.jpg" alt="M.Tharsika" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>M.Tharsika</h4>
+                        <p class="student-degree">E/23/396</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/396/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23403.jpg" alt="D.J. Thotagamuwa" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D.J. Thotagamuwa</h4>
+                        <p class="student-degree">E/23/403</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/403/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23407.jpg" alt="S.A.A.Upek" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>S.A.A.Upek</h4>
+                        <p class="student-degree">E/23/407</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/407/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23411.jpg" alt="G.W.C.H. Veedisha" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>G.W.C.H. Veedisha</h4>
+                        <p class="student-degree">E/23/411</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/411/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23412.jpg" alt="A.P.S. Vidanya" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>A.P.S. Vidanya</h4>
+                        <p class="student-degree">E/23/412</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/412/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23416.jpg" alt="Vishwaka A.G.S." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Vishwaka A.G.S.</h4>
+                        <p class="student-degree">E/23/416</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/416/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23427.jpg" alt="A.S.Weerasinghe" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>A.S.Weerasinghe</h4>
+                        <p class="student-degree">E/23/427</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/427/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23430.jpg" alt="K.W.H.N. Weerasinghe" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>K.W.H.N. Weerasinghe</h4>
+                        <p class="student-degree">E/23/430</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/430/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23431.jpg" alt="Weerasinghe W.M.D.R.B." onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>Weerasinghe W.M.D.R.B.</h4>
+                        <p class="student-degree">E/23/431</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/431/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23435.jpg" alt="E.S. Wickramasinghe" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>E.S. Wickramasinghe</h4>
+                        <p class="student-degree">E/23/435</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/435/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23442.jpg" alt="D.K.G.P.C.B. Wijerathne" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>D.K.G.P.C.B. Wijerathne</h4>
+                        <p class="student-degree">E/23/442</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/442/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23454.jpg" alt="T.T.R. Yapa" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>T.T.R. Yapa</h4>
+                        <p class="student-degree">E/23/454</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/454/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <div class="student-photo">
+                        <img src="https://people.ce.pdn.ac.lk/images/students/e23/e23455.jpg" alt="H.P.L.N. Yashassri" onerror="this.src='students/placeholder.jpg'">
+                    </div>
+                    <div class="student-info">
+                        <h4>H.P.L.N. Yashassri</h4>
+                        <p class="student-degree">E/23/455</p>
+                        <a href="https://people.ce.pdn.ac.lk/students/e23/455/" target="_blank" class="view-profile-btn">View</a>
+                    </div>
+                </div>
+
             </div>
+
 
             <!-- E22 Batch -->
             <h3 class="batch-header">E22 Batch</h3>
