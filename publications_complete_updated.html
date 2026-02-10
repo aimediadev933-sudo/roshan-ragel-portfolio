@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Roshan G. Ragel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Enhanced Publication Styles */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-box {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .search-filter-section {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.8rem 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+        }
+
+        .expand-all-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .expand-all-btn:hover {
+            background: #d4af37;
+            transform: translateY(-2px);
+        }
+        
+        .pub-venue {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .pub-doi {
+            color: var(--text-secondary);
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .pub-doi a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .pub-doi a:hover {
+            opacity: 0.8;
+        }
+        
+        .pub-authors a {
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .pub-authors a:hover {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+        
+        .pub-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+        
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .pub-link:hover {
+            background: #d4af37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .publication-item {
+            padding: 1.8rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .publication-item.hidden {
+            display: none;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .year-section {
+            margin-bottom: 2rem;
+        }
+
+        .year-header {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            padding: 1rem 1.5rem;
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .year-header:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--accent-gold);
+        }
+
+        .year-header::after {
+            content: '▼';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .year-section[open] .year-header::after {
+            transform: rotate(180deg);
+        }
+
+        .year-content {
+            padding: 1.5rem 0.5rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .publications-note {
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="about-page">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Roshan G. Ragel</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="publications.html" class="active">PUBLICATIONS</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="podcasts.html">PODCASTS</a></li>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="speaking.html">SPEAKING</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="students.html">Students</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Publications</h1>
+        <p>Research Output and Scholarly Contributions</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content-section fade-in fade-in-delay-3">
+            <!-- Statistics Section -->
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">1,885</div>
+                    <div class="stat-label">Total Citations</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">36</div>
+                    <div class="stat-label">H-Index</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">i10-Index</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Total Publications</div>
+                </div>
+            </div>
+
+            <!-- Profile Links -->
+            <div class="publications-note">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-gold);">Complete Publication Profile</h3>
+                <p style="color: #ffffff; margin-bottom: 1.5rem; line-height: 1.8;">
+                    Prof. Ragel has co-authored over 200 peer-reviewed articles spanning multiple years of research in Computer Engineering, 
+                    IoT, Bioinformatics, and related fields. For a complete publication profile, please visit:
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                    <a href="https://scholar.google.com/citations?user=UTYj8usAAAAJ&hl=en" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                        <i class="fa-brands fa-google-scholar" style="font-size: 1.3rem;"></i> Google Scholar
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Roshan-Ragel" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                        <i class="fa-brands fa-researchgate" style="font-size: 1.3rem;"></i> ResearchGate
+                    </a>
+                    <a href="https://orcid.org/0000-0002-4511-2335" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                        <i class="fa-brands fa-orcid" style="font-size: 1.3rem;"></i> ORCID
+                    </a>
+                    <a href="https://dblp.org/pid/25/6238.html" target="_blank" class="resource-link" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem;">
+                        <i class="fas fa-database" style="font-size: 1.3rem;"></i> DBLP
+                    </a>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search publications by title, author, or keyword...">
+                    <button class="expand-all-btn" onclick="expandAll()">Expand All Years</button>
+                </div>
+                <div class="filter-buttons">
+                    <span style="color: var(--text-secondary); margin-right: 0.5rem;">Filter by topic:</span>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="AI">AI/ML</button>
+                    <button class="filter-btn" data-filter="Bioinformatics">Bioinformatics</button>
+                    <button class="filter-btn" data-filter="Security">Security</button>
+                    <button class="filter-btn" data-filter="Hardware">Hardware</button>
+                    <button class="filter-btn" data-filter="IoT">IoT/Robotics</button>
+                    <button class="filter-btn" data-filter="Agriculture">Agriculture</button>
+                </div>
+            </div>
+
+            <h2>Selected Publications by Year</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                Last updated: <strong style="color: var(--accent-gold);">February 10, 2025</strong> • 
+                Data source: DBLP, Google Scholar, ResearchGate
+            </p>
+            
+            <div class="publications-years">
+                <details class="year-section" open>
+                    <summary class="year-header">2025</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI,Agriculture">
+                            <p class="pub-title">Background-Masked Lightweight Approach for Pear Leaf Disease Recognition</p>
+                            <p class="pub-authors">
+                                Romiyal George, Selvarajah Thuseethan, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                Sutharshan Rajasegarar, Mamoun Alazab, Hamish A. Campbell, John Yearwood
+                            </p>
+                            <p class="pub-venue">IEEE Access, Vol. 13, 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ACCESS.2025.3593413" target="_blank">10.1109/ACCESS.2025.3593413</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,Security">
+                            <p class="pub-title">Advancing suspicious object detection in unconstrained environments using computer vision</p>
+                            <p class="pub-authors">
+                                Kanagasabai Thiruthanigesan, Ruwan D. Nawarathna, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>
+                            </p>
+                            <p class="pub-venue">Applied Intelligence, Vol. 55(12), 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1007/s10489-025-06753-2" target="_blank">10.1007/s10489-025-06753-2</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,Agriculture">
+                            <p class="pub-title">Past, present and future of deep plant leaf disease recognition: A survey</p>
+                            <p class="pub-authors">
+                                Romiyal George, Selvarajah Thuseethan, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                Kayathiri Mahendrakumaran, Sivaraj Nimishan, Chathrie Wimalasooriya, Mamoun Alazab
+                            </p>
+                            <p class="pub-venue">Computers and Electronics in Agriculture, Vol. 234, 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.compag.2025.110128" target="_blank">10.1016/j.compag.2025.110128</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,IoT">
+                            <p class="pub-title">Machine Learning and Deep Learning-Based Atmospheric Duct Interference Detection and Mitigation in TD-LTE Networks</p>
+                            <p class="pub-authors">
+                                Rasendram Muralitharan, Upul Jayasinghe, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                Gyu Myoung Lee
+                            </p>
+                            <p class="pub-venue">Future Internet, Vol. 17(6), 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.3390/fi17060237" target="_blank">10.3390/fi17060237</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,Bioinformatics">
+                            <p class="pub-title">A Comparative Study on Generalized Automated Medical Image Segmentation for Dataset Building</p>
+                            <p class="pub-authors">
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/245/" target="_blank">Nishani Kasineshan</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/340/" target="_blank">Vithurshini Subramanieam</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/366/" target="_blank">Thulasiyan Yogeswaran</a>, 
+                                Sashini Liyanage, Isuri Devindi, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                Vajira Thambawita, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">2025 5th International Conference on Advanced Research in Computing (ICARC), 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ICARC64760.2025.10963209" target="_blank">10.1109/ICARC64760.2025.10963209</a></p>
+                            <div class="pub-links">
+                                <a href="https://docs.google.com/presentation/d/1DkLqAkhmkS3W8LeAGbo-FGcpYn9kMrSI/edit?slide=id.p1" target="_blank" class="pub-link">
+                                    <i class="fas fa-presentation"></i> Presentation
+                                </a>
+                                <a href="https://projects.ce.pdn.ac.lk/4yp/e18/Automated-Medical-Image-Annotation-for-Dataset-Building/" target="_blank" class="pub-link">
+                                    <i class="fas fa-project-diagram"></i> Project
+                                </a>
+                                <a href="https://github.com/cepdnaclk/e18-4yp-Automated-Medical-Image-Annotation-for-Dataset-Building" target="_blank" class="pub-link">
+                                    <i class="fab fa-github"></i> Codebase
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="IoT,Hardware">
+                            <p class="pub-title">Simultaneous Localization and Mapping with Cost Effective Sensors</p>
+                            <p class="pub-authors">
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/227/" target="_blank">Dinuka Mudalige</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/077/" target="_blank">Nipun Dharmarathne</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e18/150/" target="_blank">Yojith Jayarathna</a>, 
+                                Nuwan Jaliyagoda, Akila Karunanayake, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">2025 International Research Conference on Smart Computing and Systems Engineering (SCSE), 2025</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/SCSE65633.2025.11030968" target="_blank">10.1109/SCSE65633.2025.11030968</a></p>
+                            <div class="pub-links">
+                                <a href="https://docs.google.com/presentation/d/1Sn4Bnb49-N23yy5Edn8H73UVxVlOOfMW/edit?slide=id.p1" target="_blank" class="pub-link">
+                                    <i class="fas fa-presentation"></i> Presentation
+                                </a>
+                                <a href="https://projects.ce.pdn.ac.lk/4yp/e18/PeraSwarm-Simultaneous-Localization-and-Mapping-in-Mixed-Reality-Environment/" target="_blank" class="pub-link">
+                                    <i class="fas fa-project-diagram"></i> Project
+                                </a>
+                                <a href="https://github.com/cepdnaclk/e18-4yp-PeraSwarm-Simultaneous-Localization-and-Mapping-in-Mixed-Reality-Environment" target="_blank" class="pub-link">
+                                    <i class="fab fa-github"></i> Codebase
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="year-section">
+                    <summary class="year-header">2024</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI,Bioinformatics">
+                            <p class="pub-title">Multimodal Deep Convolutional Neural Network Pipeline for AI-Assisted Early Detection of Oral Cancer</p>
+                            <p class="pub-authors">
+                                G. A. I. Devindi, D. M. D. R. Dissanayake, S. N. Liyanage, F. B. A. H. Francis, M. B. D. Pavithya, 
+                                N. S. Piyarathne, P. V. K. S. Hettiarachchi, R. M. S. G. K. Rasnayaka, Ruwan Duminda Jayasinghe, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">IEEE Access, Vol. 12, 2024</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ACCESS.2024.3454338" target="_blank">10.1109/ACCESS.2024.3454338</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI">
+                            <p class="pub-title">Deep Learning Model for Tamil Part-of-Speech Tagging</p>
+                            <p class="pub-authors">
+                                Hemakasiny Visuwalingam, Ratnasingam Sakuntharaj, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/janaka-alawatugoda/" target="_blank">Janaka Alawatugoda</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>
+                            </p>
+                            <p class="pub-venue">Computer Journal, Vol. 67(8), 2024</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1093/comjnl/bxae033" target="_blank">10.1093/comjnl/bxae033</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,Agriculture">
+                            <p class="pub-title">Comparative Analysis of Pre-trained Deep Neural Networks for Plant Disease Classification</p>
+                            <p class="pub-authors">
+                                Romiyal George, Selvarajah Thuseethan, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>
+                            </p>
+                            <p class="pub-venue">JCSSE 2024: 179-186</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/JCSSE61278.2024.10613633" target="_blank">10.1109/JCSSE61278.2024.10613633</a></p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="year-section">
+                    <summary class="year-header">2023</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI,Bioinformatics">
+                            <p class="pub-title">DeepSelectNet: deep neural network based selective sequencing for oxford nanopore sequencing</p>
+                            <p class="pub-authors">
+                                Anjana Senanayake, Hasindu Gamaarachchi, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/damayanthi-herath/" target="_blank">Damayanthi Herath</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>
+                            </p>
+                            <p class="pub-venue">BMC Bioinformatics, 2023</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1186/s12859-023-05151-0" target="_blank">10.1186/s12859-023-05151-0</a></p>
+                            <div class="pub-links">
+                                <a href="https://doi.org/10.1186/s12859-023-05151-0" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/AnjanaSenanayake/DeepSelectNet" target="_blank" class="pub-link">
+                                    <i class="fab fa-github"></i> Codebase
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="IoT,AI">
+                            <p class="pub-title">Mixed-Reality Based Multi-Agent Robotics Framework for Artificial Swarm Intelligence Experiments</p>
+                            <p class="pub-authors">
+                                <a href="https://people.ce.pdn.ac.lk/students/e15/173/" target="_blank">Dilshani Karunarathna</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e15/140/" target="_blank">Nuwan Jaliyagoda</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/students/e15/142/" target="_blank">Ganindu Jayalath</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/janaka-alawatugoda/" target="_blank">Janaka Alawatugoda</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">IEEE Access, 2023</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ACCESS.2023.3317434" target="_blank">10.1109/ACCESS.2023.3317434</a></p>
+                            <div class="pub-links">
+                                <a href="https://www.youtube.com/watch?v=UxYynRS6BR0" target="_blank" class="pub-link">
+                                    <i class="fas fa-video"></i> Presentation
+                                </a>
+                                <a href="https://projects.ce.pdn.ac.lk/4yp/e15/Mixed-Reality-based-Simulation-Platform-for-Swarm-Robotics/" target="_blank" class="pub-link">
+                                    <i class="fas fa-project-diagram"></i> Project
+                                </a>
+                                <a href="https://github.com/Pera-Swarm" target="_blank" class="pub-link">
+                                    <i class="fab fa-github"></i> Codebase
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-topics="Hardware,Bioinformatics">
+                            <p class="pub-title">Cross Layer Design Using HW/SW Co-Design and HLS to Accelerate Chaining in Genomic Analysis</p>
+                            <p class="pub-authors">
+                                Kisaru Liyanage, Hasindu Gamaarachchi, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>, 
+                                Sri Parameswaran
+                            </p>
+                            <p class="pub-venue">IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2023</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/TCAD.2023.3250827" target="_blank">10.1109/TCAD.2023.3250827</a></p>
+                        </div>
+
+                        <div class="publication-item" data-topics="AI,Security">
+                            <p class="pub-title">Enhanced YOLOv4 for Facilitating Public Safety Management amidst Protests and Riots</p>
+                            <p class="pub-authors">
+                                K. Thiruthanigesan, Ruwan D. Nawarathna, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan G. Ragel</a>
+                            </p>
+                            <p class="pub-venue">ICIIS 2023: 1-6</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="year-section">
+                    <summary class="year-header">2021</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI">
+                            <p class="pub-title">An optical physics inspired CNN approach for intrinsic image decomposition</p>
+                            <p class="pub-authors">
+                                Harshana Weligampola, Gihan Jayatilaka, Suren Sritharan, Parakrama Ekanayake, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                Vijitha Herath, Roshan Godaliyadda
+                            </p>
+                            <p class="pub-venue">2021 IEEE International Conference on Image Processing (ICIP), 2021</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ICIP42928.2021.9506375" target="_blank">10.1109/ICIP42928.2021.9506375</a></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2105.10076" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF Preprint
+                                </a>
+                                <a href="https://www.cs.umd.edu/~gihan/projects/fyp/icip-2021-presentation.pdf" target="_blank" class="pub-link">
+                                    <i class="fas fa-presentation"></i> Presentation
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="IoT,Hardware">
+                            <p class="pub-title">Using Near-Infrared Spectroscopy for Vein Visualization</p>
+                            <p class="pub-authors">
+                                KTB Weerasinghe, SC Tennakoon, KNU Kularatne, I Nawinne, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">R Ragel</a>, 
+                                H Jayakody
+                            </p>
+                            <p class="pub-venue">2021 10th International Conference on Information and Automation for Sustainability (ICIAfS), 2021</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ICIAfS52090.2021.9606126" target="_blank">10.1109/ICIAfS52090.2021.9606126</a></p>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="Bioinformatics">
+                            <p class="pub-title">Revealing MicroRNA Biomarkers for Alzheimer's Disease Using Next Generation Sequencing Data</p>
+                            <p class="pub-authors">
+                                Imalsha Dinuwanthi, Hasini Thilakarathna, Vidwa Sripadi, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/damayanthi-herath/" target="_blank">Damayanthi Herath</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>
+                            </p>
+                            <p class="pub-venue">2021 10th International Conference on Information and Automation for Sustainability (ICIAfS), 2021</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ICIAfS52090.2021.9606093" target="_blank">10.1109/ICIAfS52090.2021.9606093</a></p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="year-section">
+                    <summary class="year-header">2020</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI">
+                            <p class="pub-title">A Retinex based GAN Pipeline to Utilize Paired and Unpaired Datasets for Enhancing Low Light Images</p>
+                            <p class="pub-authors">
+                                Harshana Weligampola, Gihan Jayatilaka, Suren Sritharan, Roshan Goldaliyadda, Parakrama Ekanayeka, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                Vijitha Herath
+                            </p>
+                            <p class="pub-venue">MERCon, 2020</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/MERCon50084.2020.9185373" target="_blank">10.1109/MERCon50084.2020.9185373</a></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2006.15304" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF (Preprint)
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="Bioinformatics,Hardware">
+                            <p class="pub-title">Genopo: a nanopore sequencing analysis toolkit for portable Android devices</p>
+                            <p class="pub-authors">
+                                Hiruna Samarakoon, Sanoj Punchihewa, Anjana Senanayake, Jillian M. Hammond, Igor Stevanovski, 
+                                James M. Ferguson, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                Hasindu Gamaarachchi, Ira W. Deveson
+                            </p>
+                            <p class="pub-venue">Communications Biology, 2020</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1038/s42003-020-01270-z" target="_blank">10.1038/s42003-020-01270-z</a></p>
+                            <div class="pub-links">
+                                <a href="https://www.nature.com/articles/s42003-020-01270-z.pdf" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="year-section">
+                    <summary class="year-header">2019</summary>
+                    <div class="year-content">
+                        <div class="publication-item" data-topics="AI,IoT">
+                            <p class="pub-title">Non-contact Infant Sleep Apnea Detection</p>
+                            <p class="pub-authors">
+                                Gihan Jayatilaka, Harshana Weligampola, Suren Sritharan, Pankayaraj Pathmanathan, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">IEEE International Conference on Industrial and Information Systems (ICIIS), 2019</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.1109/ICIIS47346.2019.9063269" target="_blank">10.1109/ICIIS47346.2019.9063269</a></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/1910.04725" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF (Preprint)
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item" data-topics="AI,IoT">
+                            <p class="pub-title">An ensemble learning approach for electrocardiogram sensor based human emotion recognition</p>
+                            <p class="pub-authors">
+                                Theekshana Dissanayake, Yasitha Rajapaksha, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/roshan-ragel/" target="_blank">Roshan Ragel</a>, 
+                                <a href="https://people.ce.pdn.ac.lk/staff/academic/isuru-nawinne/" target="_blank">Isuru Nawinne</a>
+                            </p>
+                            <p class="pub-venue">MDPI Sensors, 2019</p>
+                            <p class="pub-doi">DOI: <a href="https://doi.org/10.3390/s19204495" target="_blank">10.3390/s19204495</a></p>
+                            <div class="pub-links">
+                                <a href="https://www.mdpi.com/1424-8220/19/20/4495/pdf" target="_blank" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search" style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 1rem;"></i>
+                <p>No publications found matching your search criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Roshan G. Ragel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const publicationItems = document.querySelectorAll('.publication-item');
+        const noResults = document.getElementById('noResults');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let currentFilter = 'all';
+
+        searchInput.addEventListener('input', filterPublications);
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.getAttribute('data-filter');
+                filterPublications();
+            });
+        });
+
+        function filterPublications() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visibleCount = 0;
+
+            publicationItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const topics = item.getAttribute('data-topics') || '';
+                
+                const matchesSearch = text.includes(searchTerm);
+                const matchesTopic = currentFilter === 'all' || topics.includes(currentFilter);
+
+                if (matchesSearch && matchesTopic) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Show/hide year sections based on visible items
+            document.querySelectorAll('.year-section').forEach(section => {
+                const visibleItems = section.querySelectorAll('.publication-item:not(.hidden)');
+                if (visibleItems.length === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function expandAll() {
+            const allSections = document.querySelectorAll('.year-section');
+            const expandBtn = document.querySelector('.expand-all-btn');
+            const allOpen = Array.from(allSections).every(section => section.open);
+
+            allSections.forEach(section => {
+                section.open = !allOpen;
+            });
+
+            expandBtn.textContent = allOpen ? 'Expand All Years' : 'Collapse All Years';
+        }
+    </script>
+</body>
+</html>
