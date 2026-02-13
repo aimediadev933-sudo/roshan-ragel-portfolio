@@ -144,6 +144,7 @@
             text-decoration: underline;
         }
 
+        /* ── Featured Video (single embed) ── */
         .video-embed {
             margin-top: 2rem;
             background: white;
@@ -177,6 +178,112 @@
             border: none;
         }
 
+        /* ── Video Tile Grid ── */
+        .video-grid-section {
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-grid-section h2 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a4d4d;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 1rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .video-tile {
+            border-radius: 10px;
+            overflow: hidden;
+            background: #f8f8f8;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .video-tile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        /* YouTube thumbnail wrapper with play button overlay */
+        .tile-thumb {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .tile-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-tile:hover .tile-thumb img {
+            opacity: 0.85;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 0, 0, 0.88);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+        }
+
+        .video-tile:hover .play-btn {
+            background: #ff0000;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+            margin-left: 3px; /* optical centre for triangle */
+        }
+
+        .tile-info {
+            padding: 1rem 1rem 1.2rem;
+        }
+
+        .tile-info h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a4d4d;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 968px) {
             .podcast-card {
                 grid-template-columns: 1fr;
@@ -187,6 +294,10 @@
             .podcast-artwork {
                 max-width: 400px;
                 margin: 0 auto;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -203,8 +314,13 @@
                 padding: 1.5rem;
             }
 
-            .episodes-section {
+            .episodes-section,
+            .video-grid-section {
                 padding: 1.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -242,8 +358,7 @@
                 <li><a href="videos.html">Videos</a></li>
                 <li><a href="speaking.html">Speaking</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                 <li><a href="students.html">Students</a></li>
-               
+                <li><a href="students.html">Students</a></li>
             </ul>
         </div>
     </nav>
@@ -259,7 +374,7 @@
         <div class="podcast-card">
             <img src="podcast.png" alt="Podcast Artwork" class="podcast-artwork">
             <div class="podcast-info">
-                <h2>Tech & Education Conversations</h2>
+                <h2>Tech &amp; Education Conversations</h2>
                 <p>
                     This podcast series features in-depth conversations about technology, education, and innovation. 
                     Each episode explores the intersection of computer engineering, teaching methodologies, and the 
@@ -278,7 +393,7 @@
             </div>
         </div>
 
-        <!-- Featured Video -->
+        <!-- Featured Video (single large embed) -->
         <div class="video-embed">
             <h2>Featured Episode</h2>
             <div class="video-container">
@@ -289,10 +404,80 @@
             </div>
         </div>
 
-       <!-- Recent Episodes -->
+        <!-- Video Tile Grid -->
+        <div class="video-grid-section">
+            <h2>More Videos</h2>
+            <div class="video-grid" id="videoGrid">
 
+                <!-- Tile 1 -->
+                <a class="video-tile"
+                   href="https://www.youtube.com/watch?v=tHpicpe3k8g"
+                   target="_blank" rel="noopener">
+                    <div class="tile-thumb">
+                        <img src="https://img.youtube.com/vi/tHpicpe3k8g/hqdefault.jpg"
+                             alt="Engineering the AI Revolution: Impacts on Industry, Education, and Society">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                        </div>
+                    </div>
+                    <div class="tile-info">
+                        <h3>Engineering the AI Revolution: Impacts on Industry, Education, and Society</h3>
+                    </div>
+                </a>
 
-       
+                <!-- Tile 2 -->
+                <a class="video-tile"
+                   href="https://www.youtube.com/watch?v=ncbdImdVWb4"
+                   target="_blank" rel="noopener">
+                    <div class="tile-thumb">
+                        <img src="https://img.youtube.com/vi/ncbdImdVWb4/hqdefault.jpg"
+                             alt="GenAI in Action: Hands-on Strategies for Transforming Research Workflows">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                        </div>
+                    </div>
+                    <div class="tile-info">
+                        <h3>GenAI in Action: Hands-on Strategies for Transforming Research Workflows</h3>
+                    </div>
+                </a>
+
+                <!-- Tile 3 — add your third video ID below -->
+                <a class="video-tile"
+                   href="https://www.youtube.com/watch?v=VIDEO_ID_3"
+                   target="_blank" rel="noopener">
+                    <div class="tile-thumb">
+                        <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg"
+                             alt="AI Tools Every Doctor Will Soon Use">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                        </div>
+                    </div>
+                    <div class="tile-info">
+                        <h3>AI Tools Every Doctor Will Soon Use</h3>
+                    </div>
+                </a>
+
+                <!-- Tile 4 — duplicate of AI Revolution (second version shown in screenshot) -->
+                <a class="video-tile"
+                   href="https://www.youtube.com/watch?v=tHpicpe3k8g"
+                   target="_blank" rel="noopener">
+                    <div class="tile-thumb">
+                        <img src="https://img.youtube.com/vi/tHpicpe3k8g/hqdefault.jpg"
+                             alt="Engineering the AI Revolution: Impacts on Industry, Education, and Society">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                        </div>
+                    </div>
+                    <div class="tile-info">
+                        <h3>Engineering the AI Revolution: Impacts on Industry, Education, and Society</h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Recent Episodes -->
+
     </main>
 
     <!-- Footer -->
