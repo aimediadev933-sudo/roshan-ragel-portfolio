@@ -169,19 +169,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Update Info */
-        .update-info {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 1rem;
-            padding: 0.5rem;
-        }
-
-        .update-info i {
-            color: var(--primary-teal);
-            margin-right: 0.3rem;
-        }
 
         @media (max-width: 768px) {
             .projects-container {
@@ -254,8 +241,7 @@
             <!-- Projects Container -->
             <div id="projectsContainer" style="display: none;"></div>
 
-            <!-- Update Info -->
-            <div id="updateInfo" class="update-info" style="display: none;"></div>
+
         </div>
     </main>
 
@@ -293,7 +279,6 @@
                 lastUpdated = data.last_updated;
                 
                 displayProjects();
-                displayUpdateInfo(data);
                 hideLoading();
                 
             } catch (error) {
@@ -348,42 +333,6 @@
             console.log(`✅ Displayed ${batches.reduce((sum, b) => sum + projectsData[b].length, 0)} projects across ${batches.length} batches`);
         }
 
-        // Display update info
-        function displayUpdateInfo(data) {
-            const infoDiv = document.getElementById('updateInfo');
-            const date = new Date(data.last_updated);
-            const timeAgo = getTimeAgo(date);
-            
-            infoDiv.innerHTML = `
-                <i class="fas fa-sync-alt"></i>
-                Data automatically updated ${timeAgo} | 
-                ${data.total_projects} projects across ${data.total_batches} batches
-            `;
-            infoDiv.style.display = 'block';
-        }
-
-        // Get human-readable time ago
-        function getTimeAgo(date) {
-            const seconds = Math.floor((new Date() - date) / 1000);
-            
-            const intervals = {
-                year: 31536000,
-                month: 2592000,
-                week: 604800,
-                day: 86400,
-                hour: 3600,
-                minute: 60
-            };
-            
-            for (let [name, seconds_in_interval] of Object.entries(intervals)) {
-                const interval = Math.floor(seconds / seconds_in_interval);
-                if (interval >= 1) {
-                    return interval === 1 ? `1 ${name} ago` : `${interval} ${name}s ago`;
-                }
-            }
-            
-            return 'just now';
-        }
 
         // Toggle batch section
         function toggleBatch(batch) {
