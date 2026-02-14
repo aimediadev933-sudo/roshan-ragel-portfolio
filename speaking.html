@@ -9,146 +9,318 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Speaking Page - Teal/Cyan Theme */
+        /* ── Base / Theme ── */
         body {
             background: linear-gradient(135deg, #0d3d3d 0%, #1a5555 100%);
-            --primary-bg: #0d3d3d;
-            --secondary-bg: #ffffff;
-            --accent-gold: #26c6da;
-            --accent-copper: #4dd0e1;
-            --text-primary: #333333;
-            --text-secondary: #555555;
+            min-height: 100vh;
         }
 
-        nav {
-            background: rgba(13, 61, 61, 0.95);
-        }
-
-        nav .logo {
-            color: #4dd0e1;
-        }
-
-        nav .nav-links a {
-            color: #b0e0e6;
-        }
-
+        nav { background: rgba(13,61,61,0.95); }
+        nav .logo { color: #4dd0e1; }
+        nav .nav-links a { color: #b0e0e6; }
         nav .nav-links a:hover,
-        nav .nav-links a.active {
-            color: #4dd0e1;
-        }
+        nav .nav-links a.active { color: #4dd0e1; }
+        nav .nav-links a::after { background: #4dd0e1; }
+        .mobile-menu-btn { color: #4dd0e1; }
 
-        nav .nav-links a::after {
-            background: #4dd0e1;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #0d3d3d 0%, #1a5555 100%);
-        }
-
+        .page-header { background: linear-gradient(135deg, #0d3d3d 0%, #1a5555 100%); }
         .page-header h1 {
             background: linear-gradient(135deg, #4dd0e1 0%, #26c6da 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .page-header p {
-            color: #b0e0e6;
-        }
-
-        .content-section h2 {
-            color: #26c6da;
-        }
-
-        .content-section h3 {
-            color: #26c6da;
-        }
-
-        .content-section p {
-            color: #ffffff;
-        }
-
-        .card,
-        .list-item {
-            background: #ffffff;
-            border-color: rgba(77, 208, 225, 0.3);
-        }
-
-        .card::before {
-            background: linear-gradient(90deg, #26c6da, #4dd0e1);
-        }
-
-        .card:hover,
-        .list-item:hover {
-            border-color: #26c6da;
-            box-shadow: 0 10px 30px rgba(77, 208, 225, 0.15);
-        }
-
-        .card h3,
-        .list-item h3 {
-            color: #26c6da;
-        }
-
-        .card p,
-        .list-item p {
-            color: #333333;
-        }
-
-        .date {
-            color: #666666;
-        }
-
-        .list-item {
-            border-left-color: #26c6da;
-        }
-
-        .resource-link {
-            color: #26c6da;
-        }
-
-        .resource-link:hover {
-            color: #4dd0e1;
-        }
-
-        .resource-link::after {
-            background: #26c6da;
-        }
+        .page-header p { color: #b0e0e6; }
 
         footer {
-            background: rgba(13, 61, 61, 0.95);
-            border-top-color: rgba(77, 208, 225, 0.3);
+            background: rgba(13,61,61,0.95);
+            border-top: 1px solid rgba(77,208,225,0.3);
         }
-
-        footer p {
-            color: #b0e0e6;
-        }
-
-        .speaking-card .icon {
-            color: #26c6da;
-        }
-
-        .speaking-card h3 {
-            color: #26c6da;
-        }
-
-        .speaking-card p {
-            color: #333333;
-        }
-
-        /* Mobile menu for teal theme */
-        .mobile-menu-btn {
-            color: #4dd0e1;
-        }
+        footer p { color: #b0e0e6; }
 
         @media (max-width: 768px) {
             .nav-links {
-                background: rgba(13, 61, 61, 0.98);
-                border-top-color: rgba(77, 208, 225, 0.3);
+                background: rgba(13,61,61,0.98);
+                border-top-color: rgba(77,208,225,0.3);
             }
+        }
+
+        /* ── Page Layout ── */
+        .speaking-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        /* ── Speaker Hero ── */
+        .speaker-hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(77,208,225,0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .speaker-hero img {
+            width: 260px;
+            min-width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .speaker-hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #4dd0e1;
+            margin-bottom: 0.75rem;
+        }
+
+        .speaker-hero-text p {
+            color: #cce8ea;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .speaker-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .badge {
+            background: rgba(38,198,218,0.12);
+            border: 1px solid rgba(38,198,218,0.35);
+            color: #4dd0e1;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Section Headings ── */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #4dd0e1;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-divider {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, #26c6da, #4dd0e1);
+            border-radius: 2px;
+            margin-bottom: 1.8rem;
+        }
+
+        /* ── Info Cards (3-col grid) ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.6rem;
+            border-top: 4px solid #26c6da;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(77,208,225,0.18);
+        }
+
+        .info-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .info-card h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #26c6da;
+            margin-bottom: 0.6rem;
+        }
+
+        .info-card p, .info-card li {
+            color: #444;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+
+
+
+        /* ── Expertise Grid (2-col) ── */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .expertise-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.6rem;
+            border-top: 4px solid #26c6da;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(77,208,225,0.15);
+        }
+
+        .expertise-card h3 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #26c6da;
+            margin-bottom: 0.8rem;
+        }
+
+        .expertise-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .expertise-card ul li {
+            color: #444;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .expertise-card ul li::before {
+            content: '›';
+            color: #26c6da;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ── CTA Box ── */
+        .cta-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            border: 1px solid rgba(38,198,218,0.2);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .cta-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #26c6da;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-box p {
+            color: #444;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .cta-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #26c6da;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover { color: #4dd0e1; transform: translateX(4px); }
+
+        .cta-note {
+            font-style: italic;
+            color: #888 !important;
+            font-size: 0.88rem !important;
+            margin-top: 1.2rem !important;
+        }
+
+        /* ── Section spacer ── */
+        .speaking-section {
+            margin-bottom: 3rem;
+        }
+
+        /* ── Animations ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+            .expertise-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .speaking-wrapper { padding: 2rem 1rem; }
+
+            .speaker-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem;
+                gap: 1.5rem;
+            }
+
+            .speaker-hero img {
+                width: 180px;
+                min-width: 180px;
+                height: 180px;
+            }
+
+            .speaker-badges { justify-content: center; }
+
+            .info-grid { grid-template-columns: 1fr; }
+
+            .topic-card { padding: 1.4rem; }
+
+            .cta-box { padding: 1.8rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
@@ -160,9 +332,9 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="podcasts.html">Podcasts</a></li>
                 <li><a href="videos.html">Videos</a></li>
-                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="speaking.html" class="active">Speaking</a></li>
                 <li><a href="presentation.html">Presentation</a></li>
-                <li><a href="students.html">Students</a></li>                
+                <li><a href="students.html">Students</a></li>
             </ul>
         </div>
     </nav>
@@ -173,230 +345,173 @@
         <p>Professional presentations, workshops, and keynotes for your event</p>
     </header>
 
-    <!-- Speaker Introduction -->
-    <div class="content-section fade-in" style="text-align: center; padding: 2rem 1rem;">
-        <img src="Untitled design (45).png" alt="Prof. Roshan G. Ragel - Keynote Speaker" style="max-width: 500px; width: 100%; height: auto; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);">
-        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Top Keynote Speaker</h2>
-        <p style="font-size: 1.2rem; color: #b0e0e6; max-width: 800px; margin: 0 auto;">
-            Delivering inspiring presentations at international conferences on computer engineering, 
-            education technology, and innovation that transform thinking and drive progress.
-        </p>
-    </div>
+    <main class="speaking-wrapper">
 
-    <!-- Event Planning Guide -->
-    <main>
-        <div class="content-section fade-in">
-            <h2>Event Planning Guide</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
-                This guide provides answers to many common questions and will help you plan your event with Prof. Ragel. 
-                For additional questions, please write to <a href="mailto:roshanr@pdn.ac.lk" class="resource-link">roshanr@pdn.ac.lk</a>.
-            </p>
-        </div>
-
-        <!-- Technical Requirements -->
-        <div class="content-section fade-in fade-in-delay-1">
-            <h2>Technical Requirements & Equipment</h2>
-            <p style="margin-bottom: 1.5rem;">
-                Prof. Ragel presents from his own laptop with presentation files that often contain embedded video. 
-                He will bring a laptop with HDMI/USB-C output and uses modern presentation software.
-            </p>
-           
-            </div>
-        </div>
-
-        <!-- Interactive Presentations -->
-        <div class="content-section fade-in fade-in-delay-2">
-            <h2>Interactive Presentations</h2>
-            <p style="margin-bottom: 1.5rem;">
-                Prof. Ragel's most effective talks involve interactivity and audience participation. 
-                Interactive elements can be accomplished using:
-            </p>
-            
-            </div>
-        </div>
-
-        
-
-        <!-- Presentation Topics -->
-        <div class="content-section fade-in fade-in-delay-1">
-            <h2>Presentation Topics & Formats</h2>
-            <p style="margin-bottom: 2rem;">
-                Prof. Ragel offers a range of presentations and workshops that can be customized to your event. 
-                Most presentations can be extended into half-day or full-day workshops and Master Classes.
-            </p>
-
-            <div class="list-item" style="background: var(--secondary-bg); border-left: 4px solid var(--accent);">
-                <h3>Computer Architecture & Modern Computing</h3>
-                <p class="date">Duration: 45-75 minutes • Can be extended to full-day workshop</p>
-                <p style="margin-bottom: 1rem;">
-                    <strong>Titles:</strong><br>
-                    • "The Evolution of Processor Design: From Moore's Law to AI Accelerators"<br>
-                    • "Energy-Efficient Computing for the Modern Era"<br>
-                    • "Hardware-Software Co-Design for AI Applications"
-                </p>
+        <!-- ── Speaker Hero ── -->
+        <div class="speaker-hero fade-in">
+            <img src="Untitled design (45).png" alt="Prof. Roshan G. Ragel – Keynote Speaker">
+            <div class="speaker-hero-text">
+                <h2>Top Keynote Speaker</h2>
                 <p>
-                    <strong>Synopsis:</strong> Exploring how computer architecture has adapted to the demands of artificial 
-                    intelligence, machine learning, and modern computing workloads. Covers processor design evolution, 
-                    memory system optimization, and energy efficiency challenges.
+                    Delivering inspiring presentations at international conferences on artificial intelligence, 
+                    computer engineering, education technology, and innovation — transforming thinking 
+                    and driving progress across academia and industry.
                 </p>
-                <p style="margin-top: 0.5rem;"><strong>Interactivity:</strong> Optional using audience response systems or show of hands</p>
-            </div>
-
-            <div class="list-item" style="background: var(--secondary-bg); border-left: 4px solid var(--accent);">
-                <h3>Embedded Systems & Internet of Things</h3>
-                <p class="date">Duration: 60-90 minutes • Can be extended to full-day workshop</p>
-                <p style="margin-bottom: 1rem;">
-                    <strong>Titles:</strong><br>
-                    • "The Future of IoT and Edge Computing"<br>
-                    • "Real-Time Systems in Modern Applications"<br>
-                    • "Embedded Security: Challenges and Solutions"
-                </p>
-                <p>
-                    <strong>Synopsis:</strong> Comprehensive overview of embedded systems design, IoT architecture, 
-                    and edge computing solutions. Discusses real-time operating systems, communication protocols, 
-                    and security considerations for connected devices.
-                </p>
-                <p style="margin-top: 0.5rem;"><strong>Interactivity:</strong> Hands-on demonstrations available for workshops</p>
-            </div>
-
-            <div class="list-item" style="background: var(--secondary-bg); border-left: 4px solid var(--accent);">
-                <h3>Transforming Engineering Education</h3>
-                <p class="date">Duration: 50-90 minutes • Workshop format available (1-6 hours)</p>
-                <p style="margin-bottom: 1rem;">
-                    <strong>Titles:</strong><br>
-                    • "Innovative Teaching Methodologies in Engineering"<br>
-                    • "Project-Based Learning: From Theory to Practice"<br>
-                    • "Educating the Innovators of the 21st Century"<br>
-                    • "Technology Integration in Engineering Programs"
-                </p>
-                <p>
-                    <strong>Synopsis:</strong> Sharing insights on effective engineering pedagogy, including project-based 
-                    learning, technology integration, and student engagement strategies. Demonstrates practical approaches 
-                    that have been successfully implemented in university settings.
-                </p>
-                <p style="margin-top: 0.5rem;"><strong>Interactivity:</strong> Highly interactive with group activities and discussions</p>
-            </div>
-
-            <div class="list-item" style="background: var(--secondary-bg); border-left: 4px solid var(--accent);">
-                <h3>Research, Innovation & Technology Transfer</h3>
-                <p class="date">Duration: 60 minutes • Panel discussions available</p>
-                <p style="margin-bottom: 1rem;">
-                    <strong>Titles:</strong><br>
-                    • "Building Technology Ecosystems: Lessons from Academia"<br>
-                    • "Academic-Industry Collaboration for Innovation"<br>
-                    • "From Research to Real-World Impact"<br>
-                    • "Sustainable Technology Development"
-                </p>
-                <p>
-                    <strong>Synopsis:</strong> Discussing how universities can contribute to regional and national technology 
-                    development through effective research, innovation ecosystems, and industry partnerships. Shares case 
-                    studies and practical strategies.
-                </p>
-                <p style="margin-top: 0.5rem;"><strong>Interactivity:</strong> Q&A sessions and panel discussions encouraged</p>
-            </div>
-        </div>
-
-        
-
-       
-        
-            <div class="list-item">
-                <h3>TEDx Peradeniya</h3>
-                <p class="date">Peradeniya, Sri Lanka · July 2024</p>
-                <p>
-                    "The Intersection of Education and Innovation" - Inspiring talk on how education 
-                    systems can foster innovation and entrepreneurial thinking.
-                </p>
-            </div>
-        </div>
-
-        
-
-        <!-- Speaking Expertise Areas -->
-        <div class="content-section fade-in fade-in-delay-1">
-            <h2>Areas of Speaking Expertise</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Computer Architecture & Design</h3>
-                    <p>
-                        • Modern processor architectures<br>
-                        • Memory system optimization<br>
-                        • Hardware accelerators for AI/ML<br>
-                        • Energy-efficient computing<br>
-                        • Hardware-software co-design<br>
-                        • FPGA and reconfigurable systems
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Embedded Systems & IoT</h3>
-                    <p>
-                        • Real-time operating systems<br>
-                        • IoT architecture and protocols<br>
-                        • Edge computing solutions<br>
-                        • Embedded security<br>
-                        • Industrial automation<br>
-                        • Sensor networks and applications
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Engineering Education</h3>
-                    <p>
-                        • Innovative teaching methodologies<br>
-                        • Project-based learning<br>
-                        • Technology in education<br>
-                        • Curriculum development<br>
-                        • Student engagement strategies<br>
-                        • Assessment and evaluation
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Research & Innovation</h3>
-                    <p>
-                        • Academic-industry collaboration<br>
-                        • Research methodology<br>
-                        • Technology transfer<br>
-                        • Innovation ecosystems<br>
-                        • Sustainable development<br>
-                        • Grant writing and funding
-                    </p>
+                <div class="speaker-badges">
+                    <span class="badge">Keynote Speaker</span>
+                    <span class="badge">AI & GenAI</span>
+                    <span class="badge">Education</span>
+                    <span class="badge">Engineering</span>
+                    <span class="badge">Research</span>
+                    <span class="badge">International</span>
                 </div>
             </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="content-section fade-in fade-in-delay-3" style="background: var(--secondary-bg); padding: 3rem; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2);">
+        <!-- ── Event Planning ── -->
+        <div class="speaking-section fade-in">
+            <h2 class="section-title">Event Planning Guide</h2>
+            <div class="section-divider"></div>
+            <p style="color:#cce8ea; font-size:1rem; line-height:1.8; margin-bottom:1.8rem;">
+                This guide answers common questions and helps you plan your event with Prof. Ragel. 
+                For additional questions, please write to 
+                <a href="mailto:roshanr@pdn.ac.lk" style="color:#4dd0e1; font-weight:600;">roshanr@pdn.ac.lk</a>.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <span class="icon">💻</span>
+                    <h3>Technical Requirements</h3>
+                    <ul>
+                        <li>Presenter's own laptop</li>
+                        <li>HDMI / USB-C output</li>
+                        <li>Presentations may include embedded video</li>
+                        <li>Stable internet connection preferred</li>
+                        <li>Clicker / laser pointer appreciated</li>
+                    </ul>
+                </div>
+                <div class="info-card fade-in">
+                    <span class="icon">🎤</span>
+                    <h3>Audio & Setup</h3>
+                    <ul>
+                        <li>Lapel or handheld microphone</li>
+                        <li>In-person, hybrid, or fully virtual</li>
+                        <li>Zoom / Teams / Webex supported</li>
+                        <li>Recording permission requested in advance</li>
+                        <li>Sound check 15 min before session</li>
+                    </ul>
+                </div>
+                <div class="info-card fade-in">
+                    <span class="icon">🤝</span>
+                    <h3>Interactive Elements</h3>
+                    <ul>
+                        <li>Audience response systems (Mentimeter, Slido)</li>
+                        <li>Live Q&A sessions</li>
+                        <li>Group discussions and activities</li>
+                        <li>Polls and quick exercises</li>
+                        <li>Hands-on demos for workshops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ── Expertise Areas ── -->
+        <div class="speaking-section fade-in">
+            <h2 class="section-title">Areas of Speaking Expertise</h2>
+            <div class="section-divider"></div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <h3>🤖 Artificial Intelligence & GenAI</h3>
+                    <ul>
+                        <li>Generative AI tools and applications</li>
+                        <li>Responsible and ethical AI</li>
+                        <li>AI strategy and governance</li>
+                        <li>Prompt engineering</li>
+                        <li>AI for research and productivity</li>
+                        <li>AI policy and national strategy</li>
+                    </ul>
+                </div>
+                <div class="expertise-card fade-in">
+                    <h3>💻 Computer Architecture & IoT</h3>
+                    <ul>
+                        <li>Modern processor architectures</li>
+                        <li>Hardware accelerators for AI/ML</li>
+                        <li>Energy-efficient computing</li>
+                        <li>IoT architecture and protocols</li>
+                        <li>Edge computing solutions</li>
+                        <li>Embedded security</li>
+                    </ul>
+                </div>
+                <div class="expertise-card fade-in">
+                    <h3>🎓 Engineering Education</h3>
+                    <ul>
+                        <li>Innovative teaching methodologies</li>
+                        <li>Project-based learning</li>
+                        <li>AI integration in curricula</li>
+                        <li>Curriculum development</li>
+                        <li>Student engagement strategies</li>
+                        <li>Assessment and evaluation</li>
+                    </ul>
+                </div>
+                <div class="expertise-card fade-in">
+                    <h3>🔬 Research & Innovation</h3>
+                    <ul>
+                        <li>Multidisciplinary research leadership</li>
+                        <li>Academic-industry collaboration</li>
+                        <li>Technology transfer</li>
+                        <li>NREN and digital infrastructure</li>
+                        <li>Sustainable development</li>
+                        <li>Capacity building programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Book / CTA ── -->
+        <div class="cta-box fade-in">
             <h2>Book Prof. Ragel for Your Event</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            <p>
                 Prof. Ragel is available for keynote speeches, panel discussions, workshops, guest lectures, 
                 and Master Classes at academic conferences, industry events, and educational institutions worldwide. 
-                His engaging presentation style and deep technical expertise make him an excellent choice for events 
-                focused on technology, engineering education, and innovation.
+                His engaging presentation style and deep expertise make him an excellent choice for events 
+                focused on AI, technology, engineering education, and innovation.
             </p>
-            <p style="margin-bottom: 1rem;">
-                <strong>For speaking inquiries and bookings:</strong>
+            <p>
+                <strong style="color:#26c6da;">For speaking inquiries and bookings:</strong>
             </p>
-            <p style="margin-bottom: 0.5rem;">
-                <a href="mailto:roshanr@pdn.ac.lk" class="resource-link" style="font-size: 1.1rem;">
-                    Email: roshanr@pdn.ac.lk →
+            <div class="cta-links">
+                <a href="mailto:roshanr@pdn.ac.lk" class="cta-link">
+                    ✉️ roshanr@pdn.ac.lk →
                 </a>
-            </p>
-            <p style="margin-bottom: 1.5rem;">
-                <a href="tel:+94771234567" class="resource-link" style="font-size: 1.1rem;">
-                    Phone: +94 77 123 4567 (example) →
-                </a>
-            </p>
-            <p style="font-style: italic; color: var(--text-secondary); margin-top: 1.5rem;">
-                Please include your event details, preferred dates, and any specific topics of interest 
+            </div>
+            <p class="cta-note">
+                Please include your event details, preferred dates, and specific topics of interest 
                 in your initial inquiry. We will respond within 48 hours to discuss your requirements.
             </p>
         </div>
+
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Roshan G. Ragel. All rights reserved.</p>
+        <p>&copy; 2025 Roshan G. Ragel. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Scroll-triggered fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
